@@ -20,8 +20,8 @@ class ViewController: UIViewController
     let stripePublishableKey = "pk_test_c7Z8l5pIYXglcN6mxzFx24YT"
     
     // To set this up, see https://github.com/stripe/example-ios-backend
-    let backendChargeURLString = "http://localhost:5000/pay"
-//    let backendChargeURLString = "https://mailacoconut.herokuapp.com/pay"
+//    let backendChargeURLString = "http://localhost:5000/pay"
+    let backendChargeURLString = "https://mailacoconut.herokuapp.com/pay"
     
     
     // To set this up, see https://stripe.com/docs/mobile/apple-pay
@@ -80,9 +80,12 @@ class ViewController: UIViewController
     
     func buy()
     {
-        Chartboost.showInterstitial(CBLocationHomeScreen)
+        
         if(canBuy())
         {
+//            Chartboost.cacheInterstitial(CBLocationMainMenu)
+            Chartboost.cacheRewardedVideo(CBLocationMainMenu)
+            
             self.coconutMessage.setMessage(self.messageField.text!)
             
             let request = PKPaymentRequest()
@@ -220,6 +223,24 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
             }
             
             let task = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
+                
+//                if(Chartboost.hasInterstitial(CBLocationMainMenu))
+//                {
+//                    Chartboost.showInterstitial(CBLocationMainMenu)
+//                }
+//                else
+//                {
+//                    Chartboost.cacheInterstitial(CBLocationMainMenu)
+//                }
+                if(Chartboost.hasRewardedVideo(CBLocationMainMenu))
+                {
+                    Chartboost.showRewardedVideo(CBLocationMainMenu)
+                }
+                else
+                {
+                    Chartboost.cacheRewardedVideo(CBLocationMainMenu)
+                }
+                
                 
                 // notice that I can omit the types of data, response and error
                 

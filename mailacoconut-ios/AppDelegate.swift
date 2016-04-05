@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         Chartboost.startWithAppId("5702c691c909a6745d24292e", appSignature: "9d030a9aaebecf52e99ca0def1750bb722a68293", delegate: nil)
+        Chartboost.setShouldRequestInterstitialsInFirstSession(false)
         
         return true
     }
