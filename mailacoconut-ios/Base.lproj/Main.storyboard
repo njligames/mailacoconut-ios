@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pNL-pf-ORd">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hPM-Tw-HwW">
+            <objects>
+                <viewController id="pNL-pf-ORd" customClass="ViewController" customModule="mailacoconut_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LPO-FB-62B"/>
+                        <viewControllerLayoutGuide type="bottom" id="pA8-fh-MJK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pMi-IR-uZo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Message Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ha1-Ex-Iyb">
+                                <rect key="frame" x="20" y="285" width="560" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="0qB-ou-i1n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="32"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="send"/>
+                                <connections>
+                                    <action selector="hitReturn:" destination="pNL-pf-ORd" eventType="primaryActionTriggered" id="QCu-2q-SIp"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mail A Coconut" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XK4-P9-nsd">
+                                <rect key="frame" x="20" y="20" width="560" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Coconut" translatesAutoresizingMaskIntoConstraints="NO" id="DY5-QM-V9I">
+                                <rect key="frame" x="20" y="73" width="560" height="197"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="197" id="cWM-Da-MtR"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-El-tTK">
+                                <rect key="frame" x="206" y="503" width="189" height="77"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="Dcb-Jt-6a7"/>
+                                    <constraint firstAttribute="width" constant="189" id="vTK-ra-MiX"/>
+                                </constraints>
+                                <state key="normal" image="ApplePayBTN_64pt__white_textLogo_"/>
+                                <state key="selected" image="ApplePayBTN_64pt__black_textLogo_"/>
+                                <state key="highlighted" image="ApplePayBTN_64pt__black_textLogo_"/>
+                                <connections>
+                                    <action selector="purchase:" destination="pNL-pf-ORd" eventType="touchUpInside" id="UpR-FZ-J9o"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DY5-QM-V9I" firstAttribute="leading" secondItem="ha1-Ex-Iyb" secondAttribute="leading" id="1tj-UY-BPL"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="top" secondItem="pMi-IR-uZo" secondAttribute="top" constant="285" id="6mu-Dv-AKr"/>
+                            <constraint firstItem="XK4-P9-nsd" firstAttribute="trailing" secondItem="DY5-QM-V9I" secondAttribute="trailing" id="8Vv-8T-v8W"/>
+                            <constraint firstItem="XK4-P9-nsd" firstAttribute="trailing" secondItem="pMi-IR-uZo" secondAttribute="trailingMargin" id="MHS-Rn-lx0"/>
+                            <constraint firstItem="XK4-P9-nsd" firstAttribute="top" secondItem="LPO-FB-62B" secondAttribute="bottom" id="VuF-0j-Wbg"/>
+                            <constraint firstItem="XK4-P9-nsd" firstAttribute="leading" secondItem="DY5-QM-V9I" secondAttribute="leading" id="aEV-I5-Htt"/>
+                            <constraint firstItem="DY5-QM-V9I" firstAttribute="top" secondItem="XK4-P9-nsd" secondAttribute="bottom" constant="8" symbolic="YES" id="bKW-VL-NAf"/>
+                            <constraint firstAttribute="bottom" secondItem="cf9-El-tTK" secondAttribute="bottom" constant="20" symbolic="YES" id="ezm-l3-hqU"/>
+                            <constraint firstItem="cf9-El-tTK" firstAttribute="centerX" secondItem="ha1-Ex-Iyb" secondAttribute="centerX" id="faj-BK-5oy"/>
+                            <constraint firstItem="DY5-QM-V9I" firstAttribute="trailing" secondItem="ha1-Ex-Iyb" secondAttribute="trailing" id="mt3-xy-b9l"/>
+                            <constraint firstItem="XK4-P9-nsd" firstAttribute="leading" secondItem="pMi-IR-uZo" secondAttribute="leadingMargin" id="sYj-vF-UZx"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="top" secondItem="DY5-QM-V9I" secondAttribute="bottom" constant="15" id="vT5-NU-eba"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="applePayButton" destination="cf9-El-tTK" id="UmN-xk-t2u"/>
+                        <outlet property="messageField" destination="ha1-Ex-Iyb" id="sdu-fP-jvK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VU1-RU-TCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="55" y="-701"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="IcP-Hc-eNl">
+            <objects>
+                <tableViewController id="Fx0-H6-lub" customClass="ViewController" customModule="mailacoconut_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iMn-SS-TAd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="UyL-TK-lDm">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tQs-Tt-hRZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tQs-Tt-hRZ" id="6Y8-DT-Wcw">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nj3-tP-F9O">
+                                        <rect key="frame" x="0.0" y="44" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nj3-tP-F9O" id="DCF-gN-h1C">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tJY-tO-0Vb">
+                                        <rect key="frame" x="0.0" y="88" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tJY-tO-0Vb" id="KLt-a5-Qad">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbB-Hv-qOm">
+                                                    <rect key="frame" x="277" y="7" width="46" height="30"/>
+                                                    <state key="normal" title="Button"/>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Fx0-H6-lub" id="P5Y-qV-xxI"/>
+                            <outlet property="delegate" destination="Fx0-H6-lub" id="ray-GP-p0Q"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eS2-KG-SbP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="95" y="91"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ApplePayBTN_64pt__black_textLogo_" width="194" height="64"/>
+        <image name="ApplePayBTN_64pt__white_textLogo_" width="194" height="64"/>
+        <image name="Coconut" width="3264" height="2448"/>
+    </resources>
+</document>

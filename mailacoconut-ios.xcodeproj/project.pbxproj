@@ -1,0 +1,614 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C1C93ED61CB3FF0200E404E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C93ED51CB3FF0200E404E3 /* AppDelegate.swift */; };
+		C1C93ED81CB3FF0200E404E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C93ED71CB3FF0200E404E3 /* ViewController.swift */; };
+		C1C93EDB1CB3FF0200E404E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C93ED91CB3FF0200E404E3 /* Main.storyboard */; };
+		C1C93EDE1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C1C93EDC1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodeld */; };
+		C1C93EE01CB3FF0200E404E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1C93EDF1CB3FF0200E404E3 /* Assets.xcassets */; };
+		C1C93EE31CB3FF0200E404E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1C93EE11CB3FF0200E404E3 /* LaunchScreen.storyboard */; };
+		C1C93EEE1CB3FF0200E404E3 /* mailacoconut_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C93EED1CB3FF0200E404E3 /* mailacoconut_iosTests.swift */; };
+		C1C93EF91CB3FF0200E404E3 /* mailacoconut_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C93EF81CB3FF0200E404E3 /* mailacoconut_iosUITests.swift */; };
+		C1C93F0A1CB3FF6500E404E3 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C93F061CB3FF6500E404E3 /* Address.swift */; };
+		C1C93F0B1CB3FF6500E404E3 /* CoconuMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C93F081CB3FF6500E404E3 /* CoconuMessageCell.swift */; };
+		C1C93F0C1CB3FF6500E404E3 /* CoconutMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C93F091CB3FF6500E404E3 /* CoconutMessage.swift */; };
+		C1C93F0F1CB4012700E404E3 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F0E1CB4012700E404E3 /* Stripe.framework */; };
+		C1C93F101CB4012700E404E3 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F0E1CB4012700E404E3 /* Stripe.framework */; };
+		C1C93F111CB4012700E404E3 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F0E1CB4012700E404E3 /* Stripe.framework */; };
+		C1C93F131CB4014400E404E3 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F121CB4014400E404E3 /* Chartboost.framework */; };
+		C1C93F141CB4014400E404E3 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F121CB4014400E404E3 /* Chartboost.framework */; };
+		C1C93F151CB4014400E404E3 /* Chartboost.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F121CB4014400E404E3 /* Chartboost.framework */; };
+		C1C93F171CB4017100E404E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F161CB4017100E404E3 /* UIKit.framework */; };
+		C1C93F191CB4017B00E404E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F181CB4017B00E404E3 /* CoreGraphics.framework */; };
+		C1C93F1B1CB4018100E404E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F1A1CB4018100E404E3 /* Foundation.framework */; };
+		C1C93F1D1CB4018700E404E3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F1C1CB4018700E404E3 /* StoreKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C1C93EEA1CB3FF0200E404E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1C93ECA1CB3FF0200E404E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1C93ED11CB3FF0200E404E3;
+			remoteInfo = "mailacoconut-ios";
+		};
+		C1C93EF51CB3FF0200E404E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C1C93ECA1CB3FF0200E404E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C1C93ED11CB3FF0200E404E3;
+			remoteInfo = "mailacoconut-ios";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C1C93ED21CB3FF0200E404E3 /* mailacoconut-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mailacoconut-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C93ED51CB3FF0200E404E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C1C93ED71CB3FF0200E404E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C1C93EDA1CB3FF0200E404E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C1C93EDD1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mailacoconut_ios.xcdatamodel; sourceTree = "<group>"; };
+		C1C93EDF1CB3FF0200E404E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C1C93EE21CB3FF0200E404E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C1C93EE41CB3FF0200E404E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1C93EE91CB3FF0200E404E3 /* mailacoconut-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mailacoconut-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C93EED1CB3FF0200E404E3 /* mailacoconut_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailacoconut_iosTests.swift; sourceTree = "<group>"; };
+		C1C93EEF1CB3FF0200E404E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1C93EF41CB3FF0200E404E3 /* mailacoconut-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mailacoconut-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C93EF81CB3FF0200E404E3 /* mailacoconut_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailacoconut_iosUITests.swift; sourceTree = "<group>"; };
+		C1C93EFA1CB3FF0200E404E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C1C93F061CB3FF6500E404E3 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		C1C93F071CB3FF6500E404E3 /* ApplePaySwag-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ApplePaySwag-Bridging-Header.h"; sourceTree = "<group>"; };
+		C1C93F081CB3FF6500E404E3 /* CoconuMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoconuMessageCell.swift; sourceTree = "<group>"; };
+		C1C93F091CB3FF6500E404E3 /* CoconutMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoconutMessage.swift; sourceTree = "<group>"; };
+		C1C93F0D1CB400E000E404E3 /* mailacoconut-ios.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "mailacoconut-ios.entitlements"; sourceTree = "<group>"; };
+		C1C93F0E1CB4012700E404E3 /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "mailacoconut-ios/Stripe.framework"; sourceTree = "<group>"; };
+		C1C93F121CB4014400E404E3 /* Chartboost.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chartboost.framework; path = "mailacoconut-ios/Chartboost.framework"; sourceTree = "<group>"; };
+		C1C93F161CB4017100E404E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		C1C93F181CB4017B00E404E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		C1C93F1A1CB4018100E404E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C1C93F1C1CB4018700E404E3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C1C93ECF1CB3FF0200E404E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C93F1D1CB4018700E404E3 /* StoreKit.framework in Frameworks */,
+				C1C93F1B1CB4018100E404E3 /* Foundation.framework in Frameworks */,
+				C1C93F191CB4017B00E404E3 /* CoreGraphics.framework in Frameworks */,
+				C1C93F171CB4017100E404E3 /* UIKit.framework in Frameworks */,
+				C1C93F0F1CB4012700E404E3 /* Stripe.framework in Frameworks */,
+				C1C93F131CB4014400E404E3 /* Chartboost.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C93EE61CB3FF0200E404E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C93F101CB4012700E404E3 /* Stripe.framework in Frameworks */,
+				C1C93F141CB4014400E404E3 /* Chartboost.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C93EF11CB3FF0200E404E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C93F111CB4012700E404E3 /* Stripe.framework in Frameworks */,
+				C1C93F151CB4014400E404E3 /* Chartboost.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C1C93EC91CB3FF0200E404E3 = {
+			isa = PBXGroup;
+			children = (
+				C1C93F1E1CB4018E00E404E3 /* Frameworks */,
+				C1C93ED41CB3FF0200E404E3 /* mailacoconut-ios */,
+				C1C93EEC1CB3FF0200E404E3 /* mailacoconut-iosTests */,
+				C1C93EF71CB3FF0200E404E3 /* mailacoconut-iosUITests */,
+				C1C93ED31CB3FF0200E404E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C1C93ED31CB3FF0200E404E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C1C93ED21CB3FF0200E404E3 /* mailacoconut-ios.app */,
+				C1C93EE91CB3FF0200E404E3 /* mailacoconut-iosTests.xctest */,
+				C1C93EF41CB3FF0200E404E3 /* mailacoconut-iosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C1C93ED41CB3FF0200E404E3 /* mailacoconut-ios */ = {
+			isa = PBXGroup;
+			children = (
+				C1C93F0D1CB400E000E404E3 /* mailacoconut-ios.entitlements */,
+				C1C93F061CB3FF6500E404E3 /* Address.swift */,
+				C1C93F071CB3FF6500E404E3 /* ApplePaySwag-Bridging-Header.h */,
+				C1C93F081CB3FF6500E404E3 /* CoconuMessageCell.swift */,
+				C1C93F091CB3FF6500E404E3 /* CoconutMessage.swift */,
+				C1C93ED51CB3FF0200E404E3 /* AppDelegate.swift */,
+				C1C93ED71CB3FF0200E404E3 /* ViewController.swift */,
+				C1C93ED91CB3FF0200E404E3 /* Main.storyboard */,
+				C1C93EDF1CB3FF0200E404E3 /* Assets.xcassets */,
+				C1C93EE11CB3FF0200E404E3 /* LaunchScreen.storyboard */,
+				C1C93EE41CB3FF0200E404E3 /* Info.plist */,
+				C1C93EDC1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodeld */,
+			);
+			path = "mailacoconut-ios";
+			sourceTree = "<group>";
+		};
+		C1C93EEC1CB3FF0200E404E3 /* mailacoconut-iosTests */ = {
+			isa = PBXGroup;
+			children = (
+				C1C93EED1CB3FF0200E404E3 /* mailacoconut_iosTests.swift */,
+				C1C93EEF1CB3FF0200E404E3 /* Info.plist */,
+			);
+			path = "mailacoconut-iosTests";
+			sourceTree = "<group>";
+		};
+		C1C93EF71CB3FF0200E404E3 /* mailacoconut-iosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C1C93EF81CB3FF0200E404E3 /* mailacoconut_iosUITests.swift */,
+				C1C93EFA1CB3FF0200E404E3 /* Info.plist */,
+			);
+			path = "mailacoconut-iosUITests";
+			sourceTree = "<group>";
+		};
+		C1C93F1E1CB4018E00E404E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1C93F1C1CB4018700E404E3 /* StoreKit.framework */,
+				C1C93F1A1CB4018100E404E3 /* Foundation.framework */,
+				C1C93F181CB4017B00E404E3 /* CoreGraphics.framework */,
+				C1C93F161CB4017100E404E3 /* UIKit.framework */,
+				C1C93F121CB4014400E404E3 /* Chartboost.framework */,
+				C1C93F0E1CB4012700E404E3 /* Stripe.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C93EFD1CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-ios" */;
+			buildPhases = (
+				C1C93ECE1CB3FF0200E404E3 /* Sources */,
+				C1C93ECF1CB3FF0200E404E3 /* Frameworks */,
+				C1C93ED01CB3FF0200E404E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mailacoconut-ios";
+			productName = "mailacoconut-ios";
+			productReference = C1C93ED21CB3FF0200E404E3 /* mailacoconut-ios.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C1C93EE81CB3FF0200E404E3 /* mailacoconut-iosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C93F001CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosTests" */;
+			buildPhases = (
+				C1C93EE51CB3FF0200E404E3 /* Sources */,
+				C1C93EE61CB3FF0200E404E3 /* Frameworks */,
+				C1C93EE71CB3FF0200E404E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1C93EEB1CB3FF0200E404E3 /* PBXTargetDependency */,
+			);
+			name = "mailacoconut-iosTests";
+			productName = "mailacoconut-iosTests";
+			productReference = C1C93EE91CB3FF0200E404E3 /* mailacoconut-iosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C1C93EF31CB3FF0200E404E3 /* mailacoconut-iosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1C93F031CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosUITests" */;
+			buildPhases = (
+				C1C93EF01CB3FF0200E404E3 /* Sources */,
+				C1C93EF11CB3FF0200E404E3 /* Frameworks */,
+				C1C93EF21CB3FF0200E404E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1C93EF61CB3FF0200E404E3 /* PBXTargetDependency */,
+			);
+			name = "mailacoconut-iosUITests";
+			productName = "mailacoconut-iosUITests";
+			productReference = C1C93EF41CB3FF0200E404E3 /* mailacoconut-iosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C1C93ECA1CB3FF0200E404E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "NJLIGames Ltd.";
+				TargetAttributes = {
+					C1C93ED11CB3FF0200E404E3 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = SRBQ5SCF5X;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 1;
+							};
+						};
+					};
+					C1C93EE81CB3FF0200E404E3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C1C93ED11CB3FF0200E404E3;
+					};
+					C1C93EF31CB3FF0200E404E3 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C1C93ED11CB3FF0200E404E3;
+					};
+				};
+			};
+			buildConfigurationList = C1C93ECD1CB3FF0200E404E3 /* Build configuration list for PBXProject "mailacoconut-ios" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C1C93EC91CB3FF0200E404E3;
+			productRefGroup = C1C93ED31CB3FF0200E404E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */,
+				C1C93EE81CB3FF0200E404E3 /* mailacoconut-iosTests */,
+				C1C93EF31CB3FF0200E404E3 /* mailacoconut-iosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C1C93ED01CB3FF0200E404E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C93EE31CB3FF0200E404E3 /* LaunchScreen.storyboard in Resources */,
+				C1C93EE01CB3FF0200E404E3 /* Assets.xcassets in Resources */,
+				C1C93EDB1CB3FF0200E404E3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C93EE71CB3FF0200E404E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C93EF21CB3FF0200E404E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C1C93ECE1CB3FF0200E404E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C93ED81CB3FF0200E404E3 /* ViewController.swift in Sources */,
+				C1C93ED61CB3FF0200E404E3 /* AppDelegate.swift in Sources */,
+				C1C93F0A1CB3FF6500E404E3 /* Address.swift in Sources */,
+				C1C93F0C1CB3FF6500E404E3 /* CoconutMessage.swift in Sources */,
+				C1C93EDE1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodeld in Sources */,
+				C1C93F0B1CB3FF6500E404E3 /* CoconuMessageCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C93EE51CB3FF0200E404E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C93EEE1CB3FF0200E404E3 /* mailacoconut_iosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C1C93EF01CB3FF0200E404E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C1C93EF91CB3FF0200E404E3 /* mailacoconut_iosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C1C93EEB1CB3FF0200E404E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */;
+			targetProxy = C1C93EEA1CB3FF0200E404E3 /* PBXContainerItemProxy */;
+		};
+		C1C93EF61CB3FF0200E404E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */;
+			targetProxy = C1C93EF51CB3FF0200E404E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C1C93ED91CB3FF0200E404E3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1C93EDA1CB3FF0200E404E3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C1C93EE11CB3FF0200E404E3 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C1C93EE21CB3FF0200E404E3 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C1C93EFB1CB3FF0200E404E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C1C93EFC1CB3FF0200E404E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C1C93EFE1CB3FF0200E404E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "mailacoconut-ios/mailacoconut-ios.entitlements";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mailacoconut-ios",
+				);
+				INFOPLIST_FILE = "mailacoconut-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/mailacoconut-ios/ApplePaySwag-Bridging-Header.h";
+			};
+			name = Debug;
+		};
+		C1C93EFF1CB3FF0200E404E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "mailacoconut-ios/mailacoconut-ios.entitlements";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mailacoconut-ios",
+				);
+				INFOPLIST_FILE = "mailacoconut-ios/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-ios";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/mailacoconut-ios/ApplePaySwag-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		C1C93F011CB3FF0200E404E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mailacoconut-ios",
+				);
+				INFOPLIST_FILE = "mailacoconut-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mailacoconut-ios.app/mailacoconut-ios";
+			};
+			name = Debug;
+		};
+		C1C93F021CB3FF0200E404E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mailacoconut-ios",
+				);
+				INFOPLIST_FILE = "mailacoconut-iosTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mailacoconut-ios.app/mailacoconut-ios";
+			};
+			name = Release;
+		};
+		C1C93F041CB3FF0200E404E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mailacoconut-ios",
+				);
+				INFOPLIST_FILE = "mailacoconut-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "mailacoconut-ios";
+			};
+			name = Debug;
+		};
+		C1C93F051CB3FF0200E404E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mailacoconut-ios",
+				);
+				INFOPLIST_FILE = "mailacoconut-iosUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "mailacoconut-ios";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C1C93ECD1CB3FF0200E404E3 /* Build configuration list for PBXProject "mailacoconut-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C93EFB1CB3FF0200E404E3 /* Debug */,
+				C1C93EFC1CB3FF0200E404E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C1C93EFD1CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-ios" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C93EFE1CB3FF0200E404E3 /* Debug */,
+				C1C93EFF1CB3FF0200E404E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C1C93F001CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C93F011CB3FF0200E404E3 /* Debug */,
+				C1C93F021CB3FF0200E404E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C1C93F031CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1C93F041CB3FF0200E404E3 /* Debug */,
+				C1C93F051CB3FF0200E404E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C1C93EDC1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C1C93EDD1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodel */,
+			);
+			currentVersion = C1C93EDD1CB3FF0200E404E3 /* mailacoconut_ios.xcdatamodel */;
+			path = mailacoconut_ios.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C1C93ECA1CB3FF0200E404E3 /* Project object */;
+}
