@@ -49,14 +49,16 @@ struct CoconutMessage {
     let description: String
     var message: String
     var swagType: CoconutMessageType
+    var sku: String
     
-    init(image: UIImage?, title: String, price: NSDecimalNumber, description: String, message: String, type: CoconutMessageType) {
+    init(image: UIImage?, title: String, price: NSDecimalNumber, description: String, message: String, type: CoconutMessageType, sku: String) {
         self.image = image
         self.title = title
         self.price = price
         self.description = description
         self.message = message
         self.swagType = type
+        self.sku = sku
         
     }
     

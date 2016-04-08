@@ -40,19 +40,36 @@
                                     <constraint firstAttribute="height" constant="197" id="cWM-Da-MtR"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-El-tTK">
-                                <rect key="frame" x="206" y="503" width="189" height="77"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="77" id="Dcb-Jt-6a7"/>
-                                    <constraint firstAttribute="width" constant="189" id="vTK-ra-MiX"/>
-                                </constraints>
-                                <state key="normal" image="ApplePayBTN_64pt__white_textLogo_"/>
-                                <state key="selected" image="ApplePayBTN_64pt__black_textLogo_"/>
-                                <state key="highlighted" image="ApplePayBTN_64pt__black_textLogo_"/>
-                                <connections>
-                                    <action selector="purchase:" destination="pNL-pf-ORd" eventType="touchUpInside" id="UpR-FZ-J9o"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-hl-CiK">
+                                <rect key="frame" x="206" y="426" width="189" height="154"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oHh-Bq-Q47">
+                                        <rect key="frame" x="0.0" y="0.0" width="189" height="77"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="77" id="UJ6-dQ-er8"/>
+                                        </constraints>
+                                        <state key="normal" image="PayPal Payment Button"/>
+                                        <state key="selected" image="ApplePayBTN_64pt__black_textLogo_"/>
+                                        <state key="highlighted" image="PayPal Payment Button Down"/>
+                                        <connections>
+                                            <action selector="purchasePayPal:" destination="pNL-pf-ORd" eventType="touchUpInside" id="NV3-ge-aLT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cf9-El-tTK">
+                                        <rect key="frame" x="0.0" y="77" width="189" height="77"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="189" id="4qW-BV-JEn"/>
+                                            <constraint firstAttribute="height" constant="77" id="MhA-1Z-o0P"/>
+                                        </constraints>
+                                        <state key="normal" image="ApplePayBTN_64pt__white_textLogo_"/>
+                                        <state key="selected" image="ApplePayBTN_64pt__black_textLogo_"/>
+                                        <state key="highlighted" image="ApplePayBTN_64pt__black_textLogo_"/>
+                                        <connections>
+                                            <action selector="purchaseApplePay:" destination="pNL-pf-ORd" eventType="touchUpInside" id="EfK-jJ-qxx"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -60,11 +77,11 @@
                             <constraint firstItem="ha1-Ex-Iyb" firstAttribute="top" secondItem="pMi-IR-uZo" secondAttribute="top" constant="285" id="6mu-Dv-AKr"/>
                             <constraint firstItem="XK4-P9-nsd" firstAttribute="trailing" secondItem="DY5-QM-V9I" secondAttribute="trailing" id="8Vv-8T-v8W"/>
                             <constraint firstItem="XK4-P9-nsd" firstAttribute="trailing" secondItem="pMi-IR-uZo" secondAttribute="trailingMargin" id="MHS-Rn-lx0"/>
+                            <constraint firstAttribute="bottom" secondItem="uMX-hl-CiK" secondAttribute="bottom" constant="20" symbolic="YES" id="Uty-Mf-Mrc"/>
                             <constraint firstItem="XK4-P9-nsd" firstAttribute="top" secondItem="LPO-FB-62B" secondAttribute="bottom" id="VuF-0j-Wbg"/>
+                            <constraint firstItem="uMX-hl-CiK" firstAttribute="centerX" secondItem="ha1-Ex-Iyb" secondAttribute="centerX" id="Y1X-8U-MSo"/>
                             <constraint firstItem="XK4-P9-nsd" firstAttribute="leading" secondItem="DY5-QM-V9I" secondAttribute="leading" id="aEV-I5-Htt"/>
                             <constraint firstItem="DY5-QM-V9I" firstAttribute="top" secondItem="XK4-P9-nsd" secondAttribute="bottom" constant="8" symbolic="YES" id="bKW-VL-NAf"/>
-                            <constraint firstAttribute="bottom" secondItem="cf9-El-tTK" secondAttribute="bottom" constant="20" symbolic="YES" id="ezm-l3-hqU"/>
-                            <constraint firstItem="cf9-El-tTK" firstAttribute="centerX" secondItem="ha1-Ex-Iyb" secondAttribute="centerX" id="faj-BK-5oy"/>
                             <constraint firstItem="DY5-QM-V9I" firstAttribute="trailing" secondItem="ha1-Ex-Iyb" secondAttribute="trailing" id="mt3-xy-b9l"/>
                             <constraint firstItem="XK4-P9-nsd" firstAttribute="leading" secondItem="pMi-IR-uZo" secondAttribute="leadingMargin" id="sYj-vF-UZx"/>
                             <constraint firstItem="ha1-Ex-Iyb" firstAttribute="top" secondItem="DY5-QM-V9I" secondAttribute="bottom" constant="15" id="vT5-NU-eba"/>
@@ -138,5 +155,7 @@
         <image name="ApplePayBTN_64pt__black_textLogo_" width="194" height="64"/>
         <image name="ApplePayBTN_64pt__white_textLogo_" width="194" height="64"/>
         <image name="Coconut" width="3264" height="2448"/>
+        <image name="PayPal Payment Button" width="280" height="97"/>
+        <image name="PayPal Payment Button Down" width="280" height="97"/>
     </resources>
 </document>

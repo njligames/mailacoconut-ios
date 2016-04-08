@@ -20,6 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Chartboost.startWithAppId("5702c691c909a6745d24292e", appSignature: "9d030a9aaebecf52e99ca0def1750bb722a68293", delegate: nil)
         Chartboost.setShouldRequestInterstitialsInFirstSession(false)
         
+        PayPalMobile.initializeWithClientIdsForEnvironments(
+            [
+                PayPalEnvironmentProduction: "AYu2b4E5F9jfjDP8U1BlLzVw_XWr0yWjQGz3iB50nQufHY1m1_R7XFYCq_nWunJX6H4xymoQ4cGvaGbP",
+                PayPalEnvironmentSandbox: "AXdH__F8fwMc60d9mKyeGzya7p0f7lBfjd5T-jK4xBJuETQCffbT7MC8baYzdDsjpK-CIQ-D3ami9OSi"
+            ])
+        
         return true
     }
 
