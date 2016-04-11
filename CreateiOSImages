@@ -131,8 +131,9 @@ sips -Z 32 $PROJECT_PATH/$ASSET_CATALOG.xcassets/AppIcon.appiconset/Icon64.png -
 # 16pt 1x,2x
 #sips -Z 32 $PROJECT_PATH/$ASSET_CATALOG.xcassets/AppIcon.appiconset/Icon64.png --out $PROJECT_PATH/$ASSET_CATALOG.xcassets/AppIcon.appiconset/Icon32.png # duplicate
 sips -Z 16 $PROJECT_PATH/$ASSET_CATALOG.xcassets/AppIcon.appiconset/Icon32.png --out $PROJECT_PATH/$ASSET_CATALOG.xcassets/AppIcon.appiconset/Icon16.png
-IconJSON = "{\"asdf\":\"asdf\"}"
-echo $IconJSON > $PROJECT_PATH/$ASSET_CATALOG.xcassets/AppIcon.appiconset/Contents.json
+
+#IconJSON = "{\"asdf\":\"asdf\"}"
+#echo $IconJSON > $PROJECT_PATH/$ASSET_CATALOG.xcassets/AppIcon.appiconset/Contents.json
 
 
 
