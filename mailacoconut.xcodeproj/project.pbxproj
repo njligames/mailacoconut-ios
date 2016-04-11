@@ -59,7 +59,7 @@
 		C1B397701CB5929A00F7272C /* PayPalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalViewController.h; sourceTree = "<group>"; };
 		C1B397711CB5929A00F7272C /* PayPalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPalViewController.m; sourceTree = "<group>"; };
 		C1B397731CB5A60300F7272C /* FlipsideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlipsideViewController.swift; sourceTree = "<group>"; };
-		C1C93ED21CB3FF0200E404E3 /* mailacoconut-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mailacoconut-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C93ED21CB3FF0200E404E3 /* mailacoconut.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mailacoconut.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C93ED51CB3FF0200E404E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1C93ED71CB3FF0200E404E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C1C93EDA1CB3FF0200E404E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,10 +67,10 @@
 		C1C93EDF1CB3FF0200E404E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C1C93EE21CB3FF0200E404E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C1C93EE41CB3FF0200E404E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1C93EE91CB3FF0200E404E3 /* mailacoconut-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mailacoconut-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C93EE91CB3FF0200E404E3 /* mailacoconut.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mailacoconut.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C93EED1CB3FF0200E404E3 /* mailacoconut_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailacoconut_iosTests.swift; sourceTree = "<group>"; };
 		C1C93EEF1CB3FF0200E404E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1C93EF41CB3FF0200E404E3 /* mailacoconut-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mailacoconut-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1C93EF41CB3FF0200E404E3 /* mailacoconut.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mailacoconut.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1C93EF81CB3FF0200E404E3 /* mailacoconut_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mailacoconut_iosUITests.swift; sourceTree = "<group>"; };
 		C1C93EFA1CB3FF0200E404E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1C93F061CB3FF6500E404E3 /* Address.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
@@ -147,9 +147,9 @@
 		C1C93ED31CB3FF0200E404E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C1C93ED21CB3FF0200E404E3 /* mailacoconut-ios.app */,
-				C1C93EE91CB3FF0200E404E3 /* mailacoconut-iosTests.xctest */,
-				C1C93EF41CB3FF0200E404E3 /* mailacoconut-iosUITests.xctest */,
+				C1C93ED21CB3FF0200E404E3 /* mailacoconut.app */,
+				C1C93EE91CB3FF0200E404E3 /* mailacoconut.xctest */,
+				C1C93EF41CB3FF0200E404E3 /* mailacoconut.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -213,9 +213,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */ = {
+		C1C93ED11CB3FF0200E404E3 /* mailacoconut */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1C93EFD1CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-ios" */;
+			buildConfigurationList = C1C93EFD1CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut" */;
 			buildPhases = (
 				8CFAB4FA11B304D31331E965 /* Check Pods Manifest.lock */,
 				C1C93ECE1CB3FF0200E404E3 /* Sources */,
@@ -228,14 +228,14 @@
 			);
 			dependencies = (
 			);
-			name = "mailacoconut-ios";
+			name = mailacoconut;
 			productName = "mailacoconut-ios";
-			productReference = C1C93ED21CB3FF0200E404E3 /* mailacoconut-ios.app */;
+			productReference = C1C93ED21CB3FF0200E404E3 /* mailacoconut.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C1C93EE81CB3FF0200E404E3 /* mailacoconut-iosTests */ = {
+		C1C93EE81CB3FF0200E404E3 /* mailacoconutTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1C93F001CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosTests" */;
+			buildConfigurationList = C1C93F001CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconutTests" */;
 			buildPhases = (
 				C1C93EE51CB3FF0200E404E3 /* Sources */,
 				C1C93EE61CB3FF0200E404E3 /* Frameworks */,
@@ -246,14 +246,14 @@
 			dependencies = (
 				C1C93EEB1CB3FF0200E404E3 /* PBXTargetDependency */,
 			);
-			name = "mailacoconut-iosTests";
+			name = mailacoconutTests;
 			productName = "mailacoconut-iosTests";
-			productReference = C1C93EE91CB3FF0200E404E3 /* mailacoconut-iosTests.xctest */;
+			productReference = C1C93EE91CB3FF0200E404E3 /* mailacoconut.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C1C93EF31CB3FF0200E404E3 /* mailacoconut-iosUITests */ = {
+		C1C93EF31CB3FF0200E404E3 /* mailacoconutUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1C93F031CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosUITests" */;
+			buildConfigurationList = C1C93F031CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconutUITests" */;
 			buildPhases = (
 				C1C93EF01CB3FF0200E404E3 /* Sources */,
 				C1C93EF11CB3FF0200E404E3 /* Frameworks */,
@@ -264,9 +264,9 @@
 			dependencies = (
 				C1C93EF61CB3FF0200E404E3 /* PBXTargetDependency */,
 			);
-			name = "mailacoconut-iosUITests";
+			name = mailacoconutUITests;
 			productName = "mailacoconut-iosUITests";
-			productReference = C1C93EF41CB3FF0200E404E3 /* mailacoconut-iosUITests.xctest */;
+			productReference = C1C93EF41CB3FF0200E404E3 /* mailacoconut.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -298,7 +298,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C1C93ECD1CB3FF0200E404E3 /* Build configuration list for PBXProject "mailacoconut-ios" */;
+			buildConfigurationList = C1C93ECD1CB3FF0200E404E3 /* Build configuration list for PBXProject "mailacoconut" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -311,9 +311,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */,
-				C1C93EE81CB3FF0200E404E3 /* mailacoconut-iosTests */,
-				C1C93EF31CB3FF0200E404E3 /* mailacoconut-iosUITests */,
+				C1C93ED11CB3FF0200E404E3 /* mailacoconut */,
+				C1C93EE81CB3FF0200E404E3 /* mailacoconutTests */,
+				C1C93EF31CB3FF0200E404E3 /* mailacoconutUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -431,12 +431,12 @@
 /* Begin PBXTargetDependency section */
 		C1C93EEB1CB3FF0200E404E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */;
+			target = C1C93ED11CB3FF0200E404E3 /* mailacoconut */;
 			targetProxy = C1C93EEA1CB3FF0200E404E3 /* PBXContainerItemProxy */;
 		};
 		C1C93EF61CB3FF0200E404E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C1C93ED11CB3FF0200E404E3 /* mailacoconut-ios */;
+			target = C1C93ED11CB3FF0200E404E3 /* mailacoconut */;
 			targetProxy = C1C93EF51CB3FF0200E404E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -561,7 +561,7 @@
 				INFOPLIST_FILE = "mailacoconut-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = mailacoconut;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/mailacoconut-ios/ApplePaySwag-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -582,7 +582,7 @@
 				INFOPLIST_FILE = "mailacoconut-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = mailacoconut;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/mailacoconut-ios/ApplePaySwag-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -599,8 +599,8 @@
 				INFOPLIST_FILE = "mailacoconut-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mailacoconut-ios.app/mailacoconut-ios";
+				PRODUCT_NAME = mailacoconut;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mailacoconut.app/mailacoconut";
 			};
 			name = Debug;
 		};
@@ -615,8 +615,8 @@
 				INFOPLIST_FILE = "mailacoconut-iosTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mailacoconut-ios.app/mailacoconut-ios";
+				PRODUCT_NAME = mailacoconut;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mailacoconut.app/mailacoconut";
 			};
 			name = Release;
 		};
@@ -630,7 +630,7 @@
 				INFOPLIST_FILE = "mailacoconut-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = mailacoconut;
 				TEST_TARGET_NAME = "mailacoconut-ios";
 			};
 			name = Debug;
@@ -645,7 +645,7 @@
 				INFOPLIST_FILE = "mailacoconut-iosUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.njligames.mailacoconut-iosUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = mailacoconut;
 				TEST_TARGET_NAME = "mailacoconut-ios";
 			};
 			name = Release;
@@ -653,7 +653,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C1C93ECD1CB3FF0200E404E3 /* Build configuration list for PBXProject "mailacoconut-ios" */ = {
+		C1C93ECD1CB3FF0200E404E3 /* Build configuration list for PBXProject "mailacoconut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1C93EFB1CB3FF0200E404E3 /* Debug */,
@@ -662,7 +662,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1C93EFD1CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-ios" */ = {
+		C1C93EFD1CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1C93EFE1CB3FF0200E404E3 /* Debug */,
@@ -671,7 +671,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1C93F001CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosTests" */ = {
+		C1C93F001CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconutTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1C93F011CB3FF0200E404E3 /* Debug */,
@@ -680,7 +680,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1C93F031CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut-iosUITests" */ = {
+		C1C93F031CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconutUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1C93F041CB3FF0200E404E3 /* Debug */,

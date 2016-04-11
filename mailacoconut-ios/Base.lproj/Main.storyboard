@@ -9,7 +9,7 @@
         <!--View Controller-->
         <scene sceneID="hPM-Tw-HwW">
             <objects>
-                <viewController id="pNL-pf-ORd" customClass="ViewController" customModule="mailacoconut_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pNL-pf-ORd" customClass="ViewController" customModule="mailacoconut" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LPO-FB-62B"/>
                         <viewControllerLayoutGuide type="bottom" id="pA8-fh-MJK"/>
@@ -99,7 +99,7 @@
         <!--View Controller-->
         <scene sceneID="IcP-Hc-eNl">
             <objects>
-                <tableViewController id="Fx0-H6-lub" customClass="ViewController" customModule="mailacoconut_ios" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="Fx0-H6-lub" customClass="ViewController" customModule="mailacoconut" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="iMn-SS-TAd">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

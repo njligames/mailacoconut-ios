@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:mailacoconut-ios.xcodeproj">
+      location = "group:/Users/jamesfolk/Dropbox/MailACoconut/mailacoconut-ios/mailacoconut.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

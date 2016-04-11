@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C1C93ED11CB3FF0200E404E3"
-               BuildableName = "mailacoconut-ios.app"
-               BlueprintName = "mailacoconut-ios"
-               ReferencedContainer = "container:mailacoconut-ios.xcodeproj">
+               BuildableName = "mailacoconut.app"
+               BlueprintName = "mailacoconut"
+               ReferencedContainer = "container:mailacoconut.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C1C93EE81CB3FF0200E404E3"
-               BuildableName = "mailacoconut-iosTests.xctest"
-               BlueprintName = "mailacoconut-iosTests"
-               ReferencedContainer = "container:mailacoconut-ios.xcodeproj">
+               BuildableName = "mailacoconut.xctest"
+               BlueprintName = "mailacoconutTests"
+               ReferencedContainer = "container:mailacoconut.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C1C93EF31CB3FF0200E404E3"
-               BuildableName = "mailacoconut-iosUITests.xctest"
-               BlueprintName = "mailacoconut-iosUITests"
-               ReferencedContainer = "container:mailacoconut-ios.xcodeproj">
+               BuildableName = "mailacoconut.xctest"
+               BlueprintName = "mailacoconutUITests"
+               ReferencedContainer = "container:mailacoconut.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1C93ED11CB3FF0200E404E3"
-            BuildableName = "mailacoconut-ios.app"
-            BlueprintName = "mailacoconut-ios"
-            ReferencedContainer = "container:mailacoconut-ios.xcodeproj">
+            BuildableName = "mailacoconut.app"
+            BlueprintName = "mailacoconut"
+            ReferencedContainer = "container:mailacoconut.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1C93ED11CB3FF0200E404E3"
-            BuildableName = "mailacoconut-ios.app"
-            BlueprintName = "mailacoconut-ios"
-            ReferencedContainer = "container:mailacoconut-ios.xcodeproj">
+            BuildableName = "mailacoconut.app"
+            BlueprintName = "mailacoconut"
+            ReferencedContainer = "container:mailacoconut.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C1C93ED11CB3FF0200E404E3"
-            BuildableName = "mailacoconut-ios.app"
-            BlueprintName = "mailacoconut-ios"
-            ReferencedContainer = "container:mailacoconut-ios.xcodeproj">
+            BuildableName = "mailacoconut.app"
+            BlueprintName = "mailacoconut"
+            ReferencedContainer = "container:mailacoconut.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

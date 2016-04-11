@@ -81,7 +81,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        applePayButton.hidden = !PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
+        applePayButton.enabled = !PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
         self.configureView()
         
         self.messageField.becomeFirstResponder()
@@ -179,42 +179,53 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     
     func buyApplePay()
     {
-        if canBuy()
+        if PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
         {
-            Chartboost.cacheRewardedVideo(CBLocationMainMenu)
-            
-            coconutMessage = CoconutMessage(image: UIImage(named: "iGT"),
-                                            title: "Mail A Coconut Message",
-                                            price: coconutMessagePrice,
-                                            description: "Send an anonymous message on a coconut to a friend or an enemy!",
-                                            message: self.messageField.text!,
-                                            type: CoconutMessageType.Delivered(method: ShippingMethod.ShippingMethodOptions.first!),
-                                            sku: "CMsg-0001")
-            
-            let request = PKPaymentRequest()
-            request.merchantIdentifier = ApplePaySwagMerchantID
-            request.supportedNetworks = SupportedPaymentNetworks
-            request.merchantCapabilities = PKMerchantCapability.Capability3DS
-            request.countryCode = "US"
-            request.currencyCode = "USD"
-            
-            request.paymentSummaryItems = calculateSummaryItemsFromSwag(coconutMessage)
-            request.requiredShippingAddressFields = PKAddressField.PostalAddress
-            
-            request.shippingMethods = calculateShippingMethod(coconutMessage)
-            
-            let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
-            applePayController.delegate = self
-            presentViewController(applePayController, animated: true, completion: nil)
+            if canBuy()
+            {
+                Chartboost.cacheRewardedVideo(CBLocationMainMenu)
+                
+                coconutMessage = CoconutMessage(image: UIImage(named: "iGT"),
+                                                title: "Mail A Coconut Message",
+                                                price: coconutMessagePrice,
+                                                description: "Send an anonymous message on a coconut to a friend or an enemy!",
+                                                message: self.messageField.text!,
+                                                type: CoconutMessageType.Delivered(method: ShippingMethod.ShippingMethodOptions.first!),
+                                                sku: "CMsg-0001")
+                
+                let request = PKPaymentRequest()
+                request.merchantIdentifier = ApplePaySwagMerchantID
+                request.supportedNetworks = SupportedPaymentNetworks
+                request.merchantCapabilities = PKMerchantCapability.Capability3DS
+                request.countryCode = "US"
+                request.currencyCode = "USD"
+                
+                request.paymentSummaryItems = calculateSummaryItemsFromSwag(coconutMessage)
+                request.requiredShippingAddressFields = PKAddressField.PostalAddress
+                
+                request.shippingMethods = calculateShippingMethod(coconutMessage)
+                
+                let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
+                applePayController.delegate = self
+                presentViewController(applePayController, animated: true, completion: nil)
+            }
+            else
+            {
+                let alert = UIAlertController(title: "We're Sorry", message: "The Message must be at least \(minimumCharacterMessage) character and less than or equal to \(maximumCharacterMessage) characters.", preferredStyle: .Alert)
+                let alertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
+                alert.addAction(alertAction)
+                presentViewController(alert, animated: true, completion: nil)
+                
+            }
         }
         else
         {
-            let alert = UIAlertController(title: "We're Sorry", message: "The Message must be at least \(minimumCharacterMessage) character and less than or equal to \(maximumCharacterMessage) characters.", preferredStyle: .Alert)
+            let alert = UIAlertController(title: "We're Sorry", message: "Apple Pay is not turned on.  To turn it on go to: Settings -> Wallet & Apple Pay. Apple Pay requires iPhone 6, 6 plus, and later.", preferredStyle: .Alert)
             let alertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
             alert.addAction(alertAction)
             presentViewController(alert, animated: true, completion: nil)
-            
         }
+        
     }
     
     //Calls this function when the tap is recognized.
