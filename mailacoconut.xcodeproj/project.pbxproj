@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C1A821191CC5574D009E562B /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A821181CC5574D009E562B /* TutorialViewController.swift */; };
+		C1A8211B1CC5AD44009E562B /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1A8211A1CC5AD44009E562B /* Defaults.plist */; };
 		C1B3976F1CB5919F00F7272C /* PayPalInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B3976E1CB5919F00F7272C /* PayPalInitializer.m */; };
 		C1B397721CB5929A00F7272C /* PayPalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B397711CB5929A00F7272C /* PayPalViewController.m */; };
 		C1B397741CB5A60300F7272C /* FlipsideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B397731CB5A60300F7272C /* FlipsideViewController.swift */; };
@@ -54,6 +56,8 @@
 /* Begin PBXFileReference section */
 		1F6C370FF4E473D26F1E38F9 /* Pods-mailacoconut-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mailacoconut-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mailacoconut-ios/Pods-mailacoconut-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		A9433AB4B1405803935B0B10 /* Pods-mailacoconut-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mailacoconut-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-mailacoconut-ios/Pods-mailacoconut-ios.release.xcconfig"; sourceTree = "<group>"; };
+		C1A821181CC5574D009E562B /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		C1A8211A1CC5AD44009E562B /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		C1B3976D1CB5919F00F7272C /* PayPalInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInitializer.h; sourceTree = "<group>"; };
 		C1B3976E1CB5919F00F7272C /* PayPalInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPalInitializer.m; sourceTree = "<group>"; };
 		C1B397701CB5929A00F7272C /* PayPalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalViewController.h; sourceTree = "<group>"; };
@@ -174,6 +178,8 @@
 				C1B3976E1CB5919F00F7272C /* PayPalInitializer.m */,
 				C1B397701CB5929A00F7272C /* PayPalViewController.h */,
 				C1B397711CB5929A00F7272C /* PayPalViewController.m */,
+				C1A821181CC5574D009E562B /* TutorialViewController.swift */,
+				C1A8211A1CC5AD44009E562B /* Defaults.plist */,
 			);
 			path = "mailacoconut-ios";
 			sourceTree = "<group>";
@@ -323,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1A8211B1CC5AD44009E562B /* Defaults.plist in Resources */,
 				C1C93EE31CB3FF0200E404E3 /* LaunchScreen.storyboard in Resources */,
 				C1C93EE01CB3FF0200E404E3 /* Assets.xcassets in Resources */,
 				C1C93EDB1CB3FF0200E404E3 /* Main.storyboard in Resources */,
@@ -400,6 +407,7 @@
 			files = (
 				C1B3976F1CB5919F00F7272C /* PayPalInitializer.m in Sources */,
 				C1C93ED81CB3FF0200E404E3 /* ViewController.swift in Sources */,
+				C1A821191CC5574D009E562B /* TutorialViewController.swift in Sources */,
 				C1C93ED61CB3FF0200E404E3 /* AppDelegate.swift in Sources */,
 				C1C93F0A1CB3FF6500E404E3 /* Address.swift in Sources */,
 				C1B397741CB5A60300F7272C /* FlipsideViewController.swift in Sources */,

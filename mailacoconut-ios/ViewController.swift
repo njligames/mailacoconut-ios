@@ -78,13 +78,58 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         }
     }
     
+    override func viewDidAppear(animated: Bool) {
+        
+        let prefs = NSUserDefaults.standardUserDefaults()
+        
+        if prefs.boolForKey("AskAboutTutorial")
+        {
+            let alert:UIAlertController = UIAlertController(title: "Welcome", message: "Would you like to see a short tutorial?", preferredStyle: .Alert)
+            
+            let yesAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Default) { action -> Void in
+                //Do some stuff
+
+                let newView = self.storyboard?.instantiateViewControllerWithIdentifier("TutorialViewController")
+                self.navigationController?.pushViewController(newView!, animated: true)
+//                
+//                PlaceViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"storyBoardIdentifier"];
+//                [self.navigationController pushViewController:newView animated:YES];
+            }
+            let noAction: UIAlertAction = UIAlertAction(title: "No", style: .Default) { action -> Void in
+                //Do some stuff
+            }
+            alert.addAction(yesAction)
+            alert.addAction(noAction)
+            
+            self.presentViewController(alert, animated: true, completion: nil)
+            prefs.setValue(false, forKey: "AskAboutTutorial")
+        }
+        
+        
+        
+//        NSString *error_message = "message"
+//        UIAlertController * alert=   [UIAlertController alertControllerWithTitle:@"Error"
+//        message:error_message
+//        preferredStyle:UIAlertControllerStyleAlert];
+        
+//        UIAlertAction* yes = [UIAlertAction actionWithTitle:@"OK"
+//        style:UIAlertActionStyleDefault
+//        handler:^(UIAlertAction * action)
+//        {
+//        [alert dismissViewControllerAnimated:YES completion:nil];
+//        [self.searchDisplayController setActive:NO];
+//        }];
+//        [alert addAction:ok];
+//        [self presentViewController:alert animated:YES completion:nil];
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         applePayButton.enabled = !PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
         self.configureView()
         
-        self.messageField.becomeFirstResponder()
+//        self.messageField.becomeFirstResponder()
         
         
         

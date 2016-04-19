@@ -26,6 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 PayPalEnvironmentSandbox: "AXdH__F8fwMc60d9mKyeGzya7p0f7lBfjd5T-jK4xBJuETQCffbT7MC8baYzdDsjpK-CIQ-D3ami9OSi"
             ])
         
+
+        let defaultPrefsFile:String = NSBundle.mainBundle().pathForResource("Defaults", ofType: "plist")!
+        let defaultPreferences:NSDictionary = NSDictionary(contentsOfFile: defaultPrefsFile)!
+        NSUserDefaults.standardUserDefaults().registerDefaults(defaultPreferences as! [String : AnyObject])
+                
         return true
     }
 
