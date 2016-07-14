@@ -13,7 +13,7 @@ import ContactsUI
 
 
 
-class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewControllerDelegate, CNContactPickerDelegate
+class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewControllerDelegate, CNContactPickerDelegate, UITextFieldDelegate
 {
 //    var environment:String = PayPalEnvironmentNoNetwork {
 //        willSet(newEnvironment) {
@@ -50,7 +50,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     let stripePublishableKey = "pk_test_c7Z8l5pIYXglcN6mxzFx24YT"
     
     // To set this up, see https://github.com/stripe/example-ios-backend
-//    let backendChargeURLString = "http://localhost:5000/pay"
+//    let backendChargeURLString = "http://localhost:3000/pay"
     let backendChargeURLString = "https://mailacoconut.herokuapp.com/pay"
     
     
@@ -68,6 +68,8 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     
     @IBOutlet weak var messageField: UITextField!
     @IBOutlet weak var applePayButton: UIButton!
+//    @IBOutlet weak var scrollView: UIScrollView!
+    
     let minimumCharacterMessage = 1
     let maximumCharacterMessage = 12
     
@@ -126,16 +128,31 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(ViewController.keyboardWillShow),
+                                                         name: UIKeyboardWillShowNotification,
+                                                         object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(ViewController.keyboardWillHide),
+                                                         name: UIKeyboardWillHideNotification,
+                                                         object: nil)
+        
         applePayButton.enabled = !PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
+        
         self.configureView()
+        self.messageField.delegate = self
         
 //        self.messageField.becomeFirstResponder()
         
         
         
         //Looks for single or multiple taps.
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
+        
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillShow(_:)), name:UIKeyboardWillShowNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.keyboardWillHide(_:)), name:UIKeyboardWillHideNotification, object: nil)
         
         
         
@@ -175,9 +192,61 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         print("PayPal iOS SDK Version: \(PayPalMobile.libraryVersion())")
     }
     
-    override func viewWillAppear(animated: Bool) {
+    func keyboardWillShow(notification:NSNotification)
+    {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+                
+                UIView.animateWithDuration(0.3, animations: {()
+                    var f = self.view.frame
+                    f.origin.y = -keyboardSize.height
+                    self.view.frame = f
+                })
+                // ...
+            } else {
+                // no UIKeyboardFrameBeginUserInfoKey entry in userInfo
+            }
+        } else {
+            // no userInfo dictionary in notification
+        }
+    }
+    
+    func keyboardWillHide(notification:NSNotification)
+    {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+                
+                UIView.animateWithDuration(0.3, animations: {()
+                    var f = self.view.frame
+                    f.origin.y = 0.0
+                    self.view.frame = f
+                })
+                // ...
+            } else {
+                // no UIKeyboardFrameBeginUserInfoKey entry in userInfo
+            }
+        } else {
+            // no userInfo dictionary in notification
+        }
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool)
+    {
+        dismissKeyboard()
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+//        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+    }
+    
+    override func viewWillAppear(animated: Bool)
+    {
         super.viewWillAppear(animated)
+        
         PayPalMobile.preconnectWithEnvironment(environment)
+        
+        
     }
     
     func canBuy()->Bool
@@ -690,5 +759,34 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
             
         }
     }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return true }
+        
+        let newLength = text.utf16.count + string.utf16.count - range.length
+        return newLength <= 10 // Bool
+    }
+    
+//    func keyboardWillShow(notification:NSNotification){
+//        
+//        var userInfo = notification.userInfo!
+//        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).CGRectValue()
+//        keyboardFrame = self.view.convertRect(keyboardFrame, fromView: nil)
+//        
+////        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+////        contentInset.bottom = keyboardFrame.size.height
+////        self.scrollView.contentInset = contentInset
+//    }
+//    
+//    func keyboardWillHide(notification:NSNotification){
+//        
+////        var contentInset:UIEdgeInsets = UIEdgeInsetsZero
+////        self.scrollView.contentInset = contentInset
+//    }
 }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SSI-R2-EzC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SSI-R2-EzC">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -24,7 +24,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QTF-wU-0Q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583" y="-730"/>
+            <point key="canvasLocation" x="3395" y="-730"/>
         </scene>
         <!--Mail A Coconut-->
         <scene sceneID="hPM-Tw-HwW">
@@ -72,9 +72,9 @@
                                 </subviews>
                             </stackView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Type Message Here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ha1-Ex-Iyb">
-                                <rect key="frame" x="20" y="275" width="560" height="104"/>
+                                <rect key="frame" x="20" y="314" width="560" height="104"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="104" id="QPC-16-YoY"/>
+                                    <constraint firstAttribute="height" constant="104" id="HYe-5O-Z3m"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="48"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardType="alphabet" returnKeyType="done"/>
@@ -85,14 +85,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="leading" secondItem="pMi-IR-uZo" secondAttribute="leadingMargin" id="1GI-2f-Cco"/>
-                            <constraint firstItem="DY5-QM-V9I" firstAttribute="leading" secondItem="ha1-Ex-Iyb" secondAttribute="leading" id="6zE-7P-8S0"/>
-                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="trailing" secondItem="pMi-IR-uZo" secondAttribute="trailingMargin" id="a5i-t0-eEL"/>
-                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="top" secondItem="DY5-QM-V9I" secondAttribute="bottom" constant="6" id="fhw-C8-nym"/>
-                            <constraint firstItem="DY5-QM-V9I" firstAttribute="trailing" secondItem="ha1-Ex-Iyb" secondAttribute="trailing" id="j7M-3d-vxl"/>
-                            <constraint firstItem="uMX-hl-CiK" firstAttribute="top" secondItem="ha1-Ex-Iyb" secondAttribute="bottom" constant="47" id="kDm-Cp-AlQ"/>
-                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="centerX" secondItem="uMX-hl-CiK" secondAttribute="centerX" id="lxN-m6-KLg"/>
-                            <constraint firstItem="DY5-QM-V9I" firstAttribute="top" secondItem="LPO-FB-62B" secondAttribute="bottom" constant="8" symbolic="YES" id="o1N-Xf-Z5r"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="trailing" secondItem="pMi-IR-uZo" secondAttribute="trailingMargin" id="4HA-xn-CQr"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="trailing" secondItem="DY5-QM-V9I" secondAttribute="trailing" id="BkH-kI-Pf7"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="leading" secondItem="DY5-QM-V9I" secondAttribute="leading" id="Idj-sr-oMg"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="centerX" secondItem="uMX-hl-CiK" secondAttribute="centerX" id="L6X-yy-XNM"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="top" secondItem="DY5-QM-V9I" secondAttribute="bottom" constant="45" id="aTS-F2-9XW"/>
+                            <constraint firstItem="DY5-QM-V9I" firstAttribute="top" secondItem="LPO-FB-62B" secondAttribute="bottom" constant="8" symbolic="YES" id="amH-xx-5Sz"/>
+                            <constraint firstItem="uMX-hl-CiK" firstAttribute="top" secondItem="ha1-Ex-Iyb" secondAttribute="bottom" constant="8" symbolic="YES" id="muU-Xx-aw0"/>
+                            <constraint firstItem="ha1-Ex-Iyb" firstAttribute="leading" secondItem="pMi-IR-uZo" secondAttribute="leadingMargin" id="ot1-sn-xhy"/>
                             <constraint firstAttribute="bottom" secondItem="uMX-hl-CiK" secondAttribute="bottom" constant="20" symbolic="YES" id="t61-1r-kq2"/>
                         </constraints>
                     </view>

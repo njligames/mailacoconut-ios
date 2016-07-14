@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "139ACD508F28FD74ADCE74ADCC5C63A9FC3376F3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416" : 0,
+    "139ACD508F28FD74ADCE74ADCC5C63A9FC3376F3" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "434A59A6-525A-4CD2-B893-BCCDCB983CF7",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416" : "..",
+    "139ACD508F28FD74ADCE74ADCC5C63A9FC3376F3" : "mailacoconut-ios\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "mailacoconut-ios",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "mailacoconut-ios.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/njligames\/mailacoconut-ios.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "139ACD508F28FD74ADCE74ADCC5C63A9FC3376F3"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:njligames\/Candidly.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9160F58490E387BF6C59D3BE73EA8BEFA3F6D416"
+    }
+  ]
+}
