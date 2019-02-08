@@ -17,9 +17,9 @@ class TutorialViewController: UIViewController
         
 //        let scrollView:UIScrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 640, height: 1136))
         scrollView.backgroundColor = UIColor(red: 1, green: 1, blue: 0, alpha: 0.5)
-        scrollView.pagingEnabled = true
+        scrollView.isPagingEnabled = true
         
-        scrollView.contentSize = CGSizeMake(pageCount * scrollView.bounds.width, scrollView.bounds.height)
+        scrollView.contentSize = CGSize(width: pageCount * scrollView.bounds.width, height: scrollView.bounds.height)
         
         var viewSize:CGRect = scrollView.bounds
 
@@ -27,13 +27,13 @@ class TutorialViewController: UIViewController
         imgView.image = UIImage(named: "Tutorial Page 1")
         scrollView.addSubview(imgView)
         
-        viewSize = CGRectOffset(viewSize, scrollView.bounds.size.width, 0)
+        viewSize = viewSize.offsetBy(dx: scrollView.bounds.size.width, dy: 0)
         
         let imgView2:UIImageView = UIImageView(frame: viewSize)
         imgView2.image = UIImage(named: "Tutorial Page 2")
         scrollView.addSubview(imgView2)
         
-        viewSize = CGRectOffset(viewSize, scrollView.bounds.size.width, 0)
+        viewSize = viewSize.offsetBy(dx: scrollView.bounds.size.width, dy: 0)
         
         let imgView3:UIImageView = UIImageView(frame: viewSize)
         imgView3.image = UIImage(named: "Tutorial Page 3")

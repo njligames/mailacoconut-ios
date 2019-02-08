@@ -26,7 +26,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     var environment:String = PayPalEnvironmentSandbox {
         willSet(newEnvironment) {
             if (newEnvironment != environment) {
-                PayPalMobile.preconnectWithEnvironment(newEnvironment)
+                PayPalMobile.preconnect(withEnvironment: newEnvironment)
             }
         }
     }
@@ -43,7 +43,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     var resultText = "" // empty
     var payPalConfig = PayPalConfiguration() // default
 
-    let SupportedPaymentNetworks = [PKPaymentNetworkVisa, PKPaymentNetworkMasterCard, PKPaymentNetworkAmex]
+    let SupportedPaymentNetworks = [PKPaymentNetwork.visa, PKPaymentNetwork.masterCard, PKPaymentNetwork.amex]
     // Replace these values with your application's keys
     
     // Find this at https://dashboard.stripe.com/account/apikeys
@@ -75,35 +75,35 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     
     func configureView() {
         
-        if (!self.isViewLoaded()) {
+        if (!self.isViewLoaded) {
             return
         }
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
-        let prefs = NSUserDefaults.standardUserDefaults()
+        let prefs = UserDefaults.standard
         
-        if prefs.boolForKey("AskAboutTutorial")
+        if prefs.bool(forKey: "AskAboutTutorial")
         {
-            let alert:UIAlertController = UIAlertController(title: "Welcome", message: "Would you like to see a short tutorial?", preferredStyle: .Alert)
+            let alert:UIAlertController = UIAlertController(title: "Welcome", message: "Would you like to see a short tutorial?", preferredStyle: .alert)
             
-            let yesAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Default) { action -> Void in
+            let yesAction: UIAlertAction = UIAlertAction(title: "Yes", style: .default) { action -> Void in
                 //Do some stuff
 
-                let newView = self.storyboard?.instantiateViewControllerWithIdentifier("TutorialViewController")
+                let newView = self.storyboard?.instantiateViewController(withIdentifier: "TutorialViewController")
                 self.navigationController?.pushViewController(newView!, animated: true)
 //                
 //                PlaceViewController *newView = [self.storyboard instantiateViewControllerWithIdentifier:@"storyBoardIdentifier"];
 //                [self.navigationController pushViewController:newView animated:YES];
             }
-            let noAction: UIAlertAction = UIAlertAction(title: "No", style: .Default) { action -> Void in
+            let noAction: UIAlertAction = UIAlertAction(title: "No", style: .default) { action -> Void in
                 //Do some stuff
             }
             alert.addAction(yesAction)
             alert.addAction(noAction)
             
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.present(alert, animated: true, completion: nil)
             prefs.setValue(false, forKey: "AskAboutTutorial")
         }
         
@@ -129,16 +129,16 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(ViewController.keyboardWillShow),
-                                                         name: UIKeyboardWillShowNotification,
+                                                         name: NSNotification.Name.UIKeyboardWillShow,
                                                          object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(ViewController.keyboardWillHide),
-                                                         name: UIKeyboardWillHideNotification,
+                                                         name: NSNotification.Name.UIKeyboardWillHide,
                                                          object: nil)
         
-        applePayButton.enabled = !PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
+        applePayButton.isEnabled = !PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks)
         
         self.configureView()
         self.messageField.delegate = self
@@ -162,8 +162,8 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         // Set up payPalConfig
         payPalConfig.acceptCreditCards = acceptCreditCards;
         payPalConfig.merchantName = "NJLIGames Ltd."
-        payPalConfig.merchantPrivacyPolicyURL = NSURL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
-        payPalConfig.merchantUserAgreementURL = NSURL(string: "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
+        payPalConfig.merchantPrivacyPolicyURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/privacy-full")
+        payPalConfig.merchantUserAgreementURL = URL(string: "https://www.paypal.com/webapps/mpp/ua/useragreement-full")
         
         // Setting the languageOrLocale property is optional.
         //
@@ -176,13 +176,13 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         //
         // For full details, including a list of available languages and locales, see PayPalPaymentViewController.h.
         
-        payPalConfig.languageOrLocale = NSLocale.preferredLanguages()[0]
+        payPalConfig.languageOrLocale = Locale.preferredLanguages[0]
         
         // Setting the payPalShippingAddressOption property is optional.
         //
         // See PayPalConfiguration.h for details.
         
-        payPalConfig.payPalShippingAddressOption = .Provided
+        payPalConfig.payPalShippingAddressOption = .provided
         
         payPalConfig.rememberUser = true
         
@@ -192,13 +192,13 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         print("PayPal iOS SDK Version: \(PayPalMobile.libraryVersion())")
     }
     
-    func keyboardWillShow(notification:NSNotification)
+    func keyboardWillShow(_ notification:Notification)
     {
         if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
                 let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
                 
-                UIView.animateWithDuration(0.3, animations: {()
+                UIView.animate(withDuration: 0.3, animations: {()
                     var f = self.view.frame
                     f.origin.y = -keyboardSize.height
                     self.view.frame = f
@@ -212,13 +212,13 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         }
     }
     
-    func keyboardWillHide(notification:NSNotification)
+    func keyboardWillHide(_ notification:Notification)
     {
         if let userInfo = notification.userInfo {
-            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            if let keyboardSize = (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
                 let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
                 
-                UIView.animateWithDuration(0.3, animations: {()
+                UIView.animate(withDuration: 0.3, animations: {()
                     var f = self.view.frame
                     f.origin.y = 0.0
                     self.view.frame = f
@@ -233,18 +233,18 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     }
     
     
-    override func viewWillDisappear(animated: Bool)
+    override func viewWillDisappear(_ animated: Bool)
     {
         dismissKeyboard()
 //        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
 //        NSNotificationCenter.defaultCenter().removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
     }
     
-    override func viewWillAppear(animated: Bool)
+    override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         
-        PayPalMobile.preconnectWithEnvironment(environment)
+        PayPalMobile.preconnect(withEnvironment: environment)
         
         
     }
@@ -271,20 +271,20 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
                                             price: coconutMessagePrice,
                                             description: "Send an anonymous message on a coconut to a friend or an enemy!",
                                             message: self.messageField.text!,
-                                            type: CoconutMessageType.Delivered(method: ShippingMethod.ShippingMethodOptions.first!),
+                                            type: CoconutMessageType.delivered(method: ShippingMethod.ShippingMethodOptions.first!),
                                             sku: "CMsg-0001")
             
             let picker = CNContactPickerViewController()
             picker.delegate = self
             
-            self.presentViewController(picker, animated: true, completion: nil)
+            self.present(picker, animated: true, completion: nil)
         }
         else
         {
-            let alert = UIAlertController(title: "We're Sorry", message: "The Message must be at least \(minimumCharacterMessage) character and less than or equal to \(maximumCharacterMessage) characters.", preferredStyle: .Alert)
-            let alertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alert = UIAlertController(title: "We're Sorry", message: "The Message must be at least \(minimumCharacterMessage) character and less than or equal to \(maximumCharacterMessage) characters.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler:nil)
             alert.addAction(alertAction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             
         }
         
@@ -293,7 +293,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     
     func buyApplePay()
     {
-        if PKPaymentAuthorizationViewController.canMakePaymentsUsingNetworks(SupportedPaymentNetworks)
+        if PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks)
         {
             if canBuy()
             {
@@ -304,40 +304,40 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
                                                 price: coconutMessagePrice,
                                                 description: "Send an anonymous message on a coconut to a friend or an enemy!",
                                                 message: self.messageField.text!,
-                                                type: CoconutMessageType.Delivered(method: ShippingMethod.ShippingMethodOptions.first!),
+                                                type: CoconutMessageType.delivered(method: ShippingMethod.ShippingMethodOptions.first!),
                                                 sku: "CMsg-0001")
                 
                 let request = PKPaymentRequest()
                 request.merchantIdentifier = ApplePaySwagMerchantID
                 request.supportedNetworks = SupportedPaymentNetworks
-                request.merchantCapabilities = PKMerchantCapability.Capability3DS
+                request.merchantCapabilities = PKMerchantCapability.capability3DS
                 request.countryCode = "US"
                 request.currencyCode = "USD"
                 
                 request.paymentSummaryItems = calculateSummaryItemsFromSwag(coconutMessage)
-                request.requiredShippingAddressFields = PKAddressField.PostalAddress
+                request.requiredShippingAddressFields = PKAddressField.postalAddress
                 
                 request.shippingMethods = calculateShippingMethod(coconutMessage)
                 
                 let applePayController = PKPaymentAuthorizationViewController(paymentRequest: request)
                 applePayController.delegate = self
-                presentViewController(applePayController, animated: true, completion: nil)
+                present(applePayController, animated: true, completion: nil)
             }
             else
             {
-                let alert = UIAlertController(title: "We're Sorry", message: "The Message must be at least \(minimumCharacterMessage) character and less than or equal to \(maximumCharacterMessage) characters.", preferredStyle: .Alert)
-                let alertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
+                let alert = UIAlertController(title: "We're Sorry", message: "The Message must be at least \(minimumCharacterMessage) character and less than or equal to \(maximumCharacterMessage) characters.", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "OK", style: .default, handler:nil)
                 alert.addAction(alertAction)
-                presentViewController(alert, animated: true, completion: nil)
+                present(alert, animated: true, completion: nil)
                 
             }
         }
         else
         {
-            let alert = UIAlertController(title: "We're Sorry", message: "Apple Pay is not turned on.  To turn it on go to: Settings -> Wallet & Apple Pay. Apple Pay requires iPhone 6, 6 plus, and later.", preferredStyle: .Alert)
-            let alertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alert = UIAlertController(title: "We're Sorry", message: "Apple Pay is not turned on.  To turn it on go to: Settings -> Wallet & Apple Pay. Apple Pay requires iPhone 6, 6 plus, and later.", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler:nil)
             alert.addAction(alertAction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         }
         
     }
@@ -348,30 +348,30 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         view.endEditing(true)
     }
     
-    @IBAction func hitReturn(sender: AnyObject) {
+    @IBAction func hitReturn(_ sender: AnyObject) {
         self.messageField.resignFirstResponder()
     }
     
-    @IBAction func purchasePayPal(sender: AnyObject) {
+    @IBAction func purchasePayPal(_ sender: AnyObject) {
         buyPayPal()
         self.messageField.resignFirstResponder()
     }
     
-    @IBAction func purchaseApplePay(sender: AnyObject) {
+    @IBAction func purchaseApplePay(_ sender: AnyObject) {
         buyApplePay()
         self.messageField.resignFirstResponder()
     }
     
-    func calculateSummaryItemsFromSwag(coconutMessage: CoconutMessage) -> [PKPaymentSummaryItem] {
+    func calculateSummaryItemsFromSwag(_ coconutMessage: CoconutMessage) -> [PKPaymentSummaryItem] {
         var summaryItems = [PKPaymentSummaryItem]()
         let label = coconutMessage.title + "\n" + coconutMessage.message
         
         summaryItems.append(PKPaymentSummaryItem(label: label, amount: coconutMessage.price))
         
         switch (coconutMessage.swagType) {
-        case .Delivered(let method):
+        case .delivered(let method):
             summaryItems.append(PKPaymentSummaryItem(label: "Shipping", amount: method.price))
-        case .Electronic:
+        case .electronic:
             break
         }
         
@@ -380,11 +380,11 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
         return summaryItems
     }
     
-    func calculateShippingMethod(coconutMessage: CoconutMessage) -> [PKShippingMethod] {
+    func calculateShippingMethod(_ coconutMessage: CoconutMessage) -> [PKShippingMethod] {
         var shippingMethods = [PKShippingMethod]()
         
         switch (coconutMessage.swagType) {
-        case .Delivered(let method):
+        case .delivered(let method):
             
             
             for shippingMethod in ShippingMethod.ShippingMethodOptions {
@@ -394,7 +394,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
                 shippingMethods.append(method)
             }
             
-        case .Electronic:
+        case .electronic:
             break
         }
         return shippingMethods
@@ -402,7 +402,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
 }
 
 extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
-    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: ((PKPaymentAuthorizationStatus) -> Void)) {
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didAuthorizePayment payment: PKPayment, completion: (@escaping (PKPaymentAuthorizationStatus) -> Void)) {
         
         // 1
         let shippingAddress = self.createShippingAddressFromRef(payment.shippingAddress)
@@ -411,38 +411,38 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
         Stripe.setDefaultPublishableKey(stripePublishableKey)
         
         // 3
-        STPAPIClient.sharedClient().createTokenWithPayment(payment) {
+        STPAPIClient.shared().createToken(with: payment) {
             (token, error) -> Void in
             
             if (error != nil) {
-                NSLog("%@", error!)
-                completion(PKPaymentAuthorizationStatus.Failure)
+//                NSLog("%@", error!)
+                completion(PKPaymentAuthorizationStatus.failure)
                 return
             }
             let theToken = token!
             
-            let url = NSURL(string: self.backendChargeURLString)
-            let request = NSMutableURLRequest(URL: url!)
-            request.HTTPMethod = "POST"
+            let url = URL(string: self.backendChargeURLString)
+            let request = NSMutableURLRequest(url: url!)
+            request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
             request.setValue("application/json", forHTTPHeaderField: "Accept")
             
             let username = "hack"
             let password = "thegibson"
             let loginString = NSString(format: "%@:%@", username, password)
-            let loginData: NSData = loginString.dataUsingEncoding(NSUTF8StringEncoding)!
-            let base64LoginString = loginData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
+            let loginData: Data = loginString.data(using: String.Encoding.utf8.rawValue)!
+            let base64LoginString = loginData.base64EncodedString(options: NSData.Base64EncodingOptions.lineLength64Characters)
             
             request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
             
-            let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-            let session = NSURLSession(configuration: config, delegate: nil, delegateQueue: NSOperationQueue())
+            let config = URLSessionConfiguration.default
+            let session = URLSession(configuration: config, delegate: nil, delegateQueue: OperationQueue())
             let body = ["stripeToken": theToken.tokenId,
                 //                "amount": self.coconutMessage.total().decimalNumberByMultiplyingBy(cents),
-                "amount": self.coconutMessagePrice.decimalNumberByMultiplyingBy(100),
+                "amount": self.coconutMessagePrice.multiplying(by: 100),
                 "description": self.coconutMessage.title,
                 "message": self.coconutMessage.message,
-                "timestamp": NSDate().timeIntervalSince1970,
+                "timestamp": Date().timeIntervalSince1970,
                 "shipping": [
                     "street": shippingAddress.Street!,
                     "city": shippingAddress.City!,
@@ -450,86 +450,75 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
                     "zip": shippingAddress.Zip!,
                     "firstName": shippingAddress.FirstName!,
                     "lastName": shippingAddress.LastName!]
-            ]
+            ] as [String : Any]
             
 //            var error: NSError?
             do {
-                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions())
+                request.httpBody = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions())
             } catch {
                 fatalError()
             }
             
-            enum JSONError: String, ErrorType {
+            enum JSONError: String, Error {
                 case NoData = "ERROR: no data"
                 case ConversionFailed = "ERROR: conversion from JSON failed"
             }
             
-            let task = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
-                
-//                if(Chartboost.hasInterstitial(CBLocationMainMenu))
+//            let task = session.dataTask(with: request, completionHandler: {(data, response, error) in
+//                
+//                if(Chartboost.hasRewardedVideo(CBLocationMainMenu))
 //                {
-//                    Chartboost.showInterstitial(CBLocationMainMenu)
+//                    Chartboost.showRewardedVideo(CBLocationMainMenu)
 //                }
 //                else
 //                {
-//                    Chartboost.cacheInterstitial(CBLocationMainMenu)
+//                    Chartboost.cacheRewardedVideo(CBLocationMainMenu)
 //                }
-                if(Chartboost.hasRewardedVideo(CBLocationMainMenu))
-                {
-                    Chartboost.showRewardedVideo(CBLocationMainMenu)
-                }
-                else
-                {
-                    Chartboost.cacheRewardedVideo(CBLocationMainMenu)
-                }
-                
-                
-                // notice that I can omit the types of data, response and error
-                
-                // your code
-                if (error != nil) {
-                    completion(PKPaymentAuthorizationStatus.Failure)
-                } else {
-                    completion(PKPaymentAuthorizationStatus.Success)
-                }
-                
-                do {
-                    guard let data = data else {
-                        throw JSONError.NoData
-                    }
-                    guard let json = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? NSDictionary else {
-                        throw JSONError.ConversionFailed
-                    }
-                    print(json)
-                    
-                    
-                    
-                } catch let error as JSONError {
-                    print(error.rawValue)
-                } catch let error as NSError {
-                    print(error.debugDescription)
-                }
-                
-                
-                
-            });
-            
-            // do whatever you need with the task e.g. run
-            task.resume()
+//                
+//                
+//                // notice that I can omit the types of data, response and error
+//                
+//                // your code
+//                if (error != nil) {
+//                    completion(PKPaymentAuthorizationStatus.failure)
+//                } else {
+//                    completion(PKPaymentAuthorizationStatus.success)
+//                }
+//                
+//                do {
+//                    guard let data = data else {
+//                        throw JSONError.NoData
+//                    }
+//                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
+//                        throw JSONError.ConversionFailed
+//                    }
+//                    print(json)
+//                    
+//                    
+//                    
+//                } catch let error as JSONError {
+//                    print(error.rawValue)
+//                } catch let error as NSError {
+//                    print(error.debugDescription)
+//                }
+//            });
+//            
+//            // do whatever you need with the task e.g. run
+//            task.resume()
         }
     }
     
-    func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController) {
-        controller.dismissViewControllerAnimated(true, completion: nil)
+    func paymentAuthorizationViewControllerDidFinish(_ controller: PKPaymentAuthorizationViewController) {
+        controller.dismiss(animated: true, completion: nil)
     }
     
-    func createShippingAddressFromRef(address: ABRecord!) -> Address {
+    func createShippingAddressFromRef(_ address: ABRecord!) -> Address {
         var shippingAddress: Address = Address()
         
         shippingAddress.FirstName = ABRecordCopyValue(address, kABPersonFirstNameProperty)?.takeRetainedValue() as? String
         shippingAddress.LastName = ABRecordCopyValue(address, kABPersonLastNameProperty)?.takeRetainedValue() as? String
         
-        let addressProperty : ABMultiValueRef = ABRecordCopyValue(address, kABPersonAddressProperty).takeUnretainedValue() as ABMultiValueRef
+        let addressProperty : ABMultiValue = ABRecordCopyValue(address, kABPersonAddressProperty).takeUnretainedValue() as ABMultiValue
         if let dict : NSDictionary = ABMultiValueCopyValueAtIndex(addressProperty, 0).takeUnretainedValue() as? NSDictionary {
             shippingAddress.Street = dict[String(kABPersonAddressStreetKey)] as? String
             shippingAddress.City = dict[String(kABPersonAddressCityKey)] as? String
@@ -540,31 +529,31 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
         return shippingAddress
     }
     
-    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController,
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController,
         didSelectShippingAddress address: ABRecord,
-        completion: ((PKPaymentAuthorizationStatus, [PKShippingMethod], [PKPaymentSummaryItem]) -> Void))
+        completion: (@escaping (PKPaymentAuthorizationStatus, [PKShippingMethod], [PKPaymentSummaryItem]) -> Void))
     {
         let shippingAddress = createShippingAddressFromRef(address)
         
         switch (shippingAddress.State, shippingAddress.City, shippingAddress.Zip)
         {
-        case (.Some(let state), .Some(let city), .Some(let zip)):
+        case (.some(let state), .some(let city), .some(let zip)):
             //            completion(.Success, nil, nil)
 //            completion(PKPaymentAuthorizationStatus.Success)
-            completion(PKPaymentAuthorizationStatus.Success, self.calculateShippingMethod(coconutMessage), self.calculateSummaryItemsFromSwag(coconutMessage))
+            completion(PKPaymentAuthorizationStatus.success, self.calculateShippingMethod(coconutMessage), self.calculateSummaryItemsFromSwag(coconutMessage))
             break
         default:
             //            completion(.InvalidShippingPostalAddress, nil, nil)
-            completion(PKPaymentAuthorizationStatus.InvalidShippingPostalAddress, self.calculateShippingMethod(coconutMessage), self.calculateSummaryItemsFromSwag(coconutMessage))
+            completion(PKPaymentAuthorizationStatus.invalidShippingPostalAddress, self.calculateShippingMethod(coconutMessage), self.calculateSummaryItemsFromSwag(coconutMessage))
             break
         }
     }
     
-    func paymentAuthorizationViewController(controller: PKPaymentAuthorizationViewController, didSelectShippingMethod shippingMethod: PKShippingMethod, completion: ((PKPaymentAuthorizationStatus, [PKPaymentSummaryItem]) -> Void))
+    func paymentAuthorizationViewController(_ controller: PKPaymentAuthorizationViewController, didSelect shippingMethod: PKShippingMethod, completion: (@escaping (PKPaymentAuthorizationStatus, [PKPaymentSummaryItem]) -> Void))
     {
         let shippingMethod = ShippingMethod.ShippingMethodOptions.filter {(method) in method.title == shippingMethod.identifier}.first!
-        coconutMessage.swagType = CoconutMessageType.Delivered(method: shippingMethod)
-        completion(PKPaymentAuthorizationStatus.Success, calculateSummaryItemsFromSwag(coconutMessage))
+        coconutMessage.swagType = CoconutMessageType.delivered(method: shippingMethod)
+        completion(PKPaymentAuthorizationStatus.success, calculateSummaryItemsFromSwag(coconutMessage))
     }
     
     
@@ -572,16 +561,16 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
     
 // MARK: - PayPalPaymentDelegate methods
     
-    func payPalPaymentDidCancel(paymentViewController: PayPalPaymentViewController)
+    func payPalPaymentDidCancel(_ paymentViewController: PayPalPaymentViewController)
     {
         print("PayPal Payment Cancelled")
-        paymentViewController.dismissViewControllerAnimated(true, completion: nil)
+        paymentViewController.dismiss(animated: true, completion: nil)
     }
     
-    func payPalPaymentViewController(paymentViewController: PayPalPaymentViewController, didCompletePayment completedPayment: PayPalPayment)
+    func payPalPaymentViewController(_ paymentViewController: PayPalPaymentViewController, didComplete completedPayment: PayPalPayment)
     {
         print("PayPal Payment Success !")
-        paymentViewController.dismissViewControllerAnimated(true, completion: { () -> Void in
+        paymentViewController.dismiss(animated: true, completion: { () -> Void in
             // send completed confirmaion to your server
             
             
@@ -589,10 +578,10 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
             
             var theMessage = ""
             let _message = completedPayment.custom
-            let receivedData = _message.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)! as NSData
+            let receivedData = _message?.data(using: String.Encoding.utf8, allowLossyConversion: false)! as! Data
             do {
-                if let response:NSDictionary = try NSJSONSerialization.JSONObjectWithData(receivedData, options:NSJSONReadingOptions.MutableContainers) as? Dictionary<String, AnyObject> {
-                    theMessage = response.objectForKey("message") as! String
+                if let response:NSDictionary = try JSONSerialization.jsonObject(with: receivedData, options:JSONSerialization.ReadingOptions.mutableContainers) as? Dictionary<String, AnyObject> as! NSDictionary {
+                    theMessage = response.object(forKey: "message") as! String
                     print(response)
                 } else {
                     print("Failed...")
@@ -622,26 +611,26 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
             ]
             
             let urlString = "https://mailacoconut.herokuapp.com/webhook"
-            let url = NSURL(string: urlString)
-            let request = NSMutableURLRequest(URL: url!)
-            request.HTTPMethod = "POST"
+            let url = URL(string: urlString)
+            let request = NSMutableURLRequest(url: url!)
+            request.httpMethod = "POST"
             request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 //            request.setValue("application/json", forHTTPHeaderField: "Accept")
             do {
-                request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions())
+                request.httpBody = try JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions())
             } catch {
                 fatalError()
             }
-            let session = NSURLSession.sharedSession()
-            let task = session.dataTaskWithRequest(request, completionHandler: {(data, response, error) in
-                
-                // notice that I can omit the types of data, response and error
-                
-                // your code
-                
-                
-            })
-            task.resume()
+            let session = URLSession.shared
+//            let task = session.dataTask(with: request, completionHandler: {(data, response, error) in
+//                
+//                // notice that I can omit the types of data, response and error
+//                
+//                // your code
+//                
+//                
+//            })
+//            task.resume()
             
             
             
@@ -678,19 +667,19 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
      * @abstract Invoked when the picker is closed.
      * @discussion The picker will be dismissed automatically after a contact or property is picked.
      */
-    func contactPickerDidCancel(picker: CNContactPickerViewController)
+    func contactPickerDidCancel(_ picker: CNContactPickerViewController)
     {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
     /*!
      * @abstract Singular delegate methods.
      * @discussion These delegate methods will be invoked when the user selects a single contact or property.
      */
-    func contactPicker(picker: CNContactPickerViewController, didSelectContactProperty contactProperty: CNContactProperty)
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty)
     {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
         let contact = contactProperty.contact
         
@@ -702,7 +691,7 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
                                                         withCity: postalAddress.city,
                                                         withState: postalAddress.state,
                                                         withPostalCode: postalAddress.postalCode,
-                                                        withCountryCode: postalAddress.ISOCountryCode.uppercaseString)
+                                                        withCountryCode: postalAddress.isoCountryCode.uppercased())
             
         
             
@@ -715,29 +704,29 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
             
             
             let items = [coconutMessageItem]
-            let subtotal = PayPalItem.totalPriceForItems(items)
+            let subtotal = PayPalItem.totalPrice(forItems: items)
             let shipping = NSDecimalNumber(string: "0.00")
             let tax = NSDecimalNumber(string: "0.00")
             let paymentDetails = PayPalPaymentDetails(subtotal: subtotal,
                                                       withShipping: shipping,
                                                       withTax: tax)
-            let total = subtotal.decimalNumberByAdding(shipping).decimalNumberByAdding(tax)
+            let total = subtotal?.adding(shipping).adding(tax)
             
             let payment = PayPalPayment(amount: total,
                                         currencyCode: "USD",
                                         shortDescription: coconutMessage.description,
-                                        intent: .Sale)
+                                        intent: .sale)
             
-            payment.items = items
-            payment.paymentDetails = paymentDetails
-            payment.shippingAddress = shippingAddress;
-            payment.custom = "{\"message\":\"\(coconutMessage.message)\"}"
-            payment.softDescriptor = "Coconut Message"
+            payment?.items = items
+            payment?.paymentDetails = paymentDetails
+            payment?.shippingAddress = shippingAddress;
+            payment?.custom = "{\"message\":\"\(coconutMessage.message)\"}"
+            payment?.softDescriptor = "Coconut Message"
             
             print(shippingAddress)
-            if (payment.processable) {
+            if (payment?.processable)! {
                 let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
-                presentViewController(paymentViewController!, animated: true, completion: { () -> Void in
+                present(paymentViewController!, animated: true, completion: { () -> Void in
                     // send completed confirmaion to your server
 //                    print("Here is your proof of payment:\n\n\(completedPayment)\n\nSend this to your server for confirmation and fulfillment. ")
                 })
@@ -752,20 +741,20 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
         }
         else
         {
-            let alert = UIAlertController(title: "Error", message: "Please select the Postal Address of the recipient", preferredStyle: .Alert)
-            let alertAction = UIAlertAction(title: "OK", style: .Default, handler:nil)
+            let alert = UIAlertController(title: "Error", message: "Please select the Postal Address of the recipient", preferredStyle: .alert)
+            let alertAction = UIAlertAction(title: "OK", style: .default, handler:nil)
             alert.addAction(alertAction)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             
         }
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return true }
         
         let newLength = text.utf16.count + string.utf16.count - range.length

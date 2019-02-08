@@ -27,16 +27,16 @@ struct ShippingMethod {
 }
 
 enum CoconutMessageType {
-    case Delivered(method: ShippingMethod)
-    case Electronic
+    case delivered(method: ShippingMethod)
+    case electronic
     
 }
 
 func ==(lhs: CoconutMessageType, rhs: CoconutMessageType) -> Bool {
     switch(lhs, rhs) {
-    case (.Delivered(let lhsVal), .Delivered(let rhsVal)):
+    case (.delivered(let lhsVal), .delivered(let rhsVal)):
         return true
-    case (.Electronic, .Electronic):
+    case (.electronic, .electronic):
         return true
     default: return false
     }
@@ -63,25 +63,25 @@ struct CoconutMessage {
     }
     
     func total() -> NSDecimalNumber {
-        var s = CoconutMessageType.Delivered(method: ShippingMethod(price: 0.0, title: "asdf", description: "asdf"))
+        var s = CoconutMessageType.delivered(method: ShippingMethod(price: 0.0, title: "asdf", description: "asdf"))
         
         
         switch (swagType) {
-        case .Delivered(let method):
-            return price.decimalNumberByAdding(method.price)
-        case .Electronic:
+        case .delivered(let method):
+            return price.adding(method.price)
+        case .electronic:
             return price
         }
     }
     
     var priceString: String {
-        let dollarFormatter: NSNumberFormatter = NSNumberFormatter()
+        let dollarFormatter: NumberFormatter = NumberFormatter()
         dollarFormatter.minimumFractionDigits = 2;
         dollarFormatter.maximumFractionDigits = 2;
-        return dollarFormatter.stringFromNumber(price)!
+        return dollarFormatter.string(from: price)!
     }
     
-    mutating func setMessage(msg: String)
+    mutating func setMessage(_ msg: String)
     {
         self.message = msg
     }
