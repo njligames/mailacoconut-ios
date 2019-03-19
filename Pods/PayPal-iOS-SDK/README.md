@@ -1,7 +1,9 @@
+**Important**: PayPal Mobile SDKs are now Deprecated and only existing integrations are supported. For all new integrations, use [Braintree Direct](https://www.braintreepayments.com/products/braintree-direct) in [supported countries](https://www.braintreepayments.com/country-selection). In other countries, use [Express Checkout](https://developer.paypal.com/docs/accept-payments/express-checkout/ec-braintree-sdk/get-started/) and choose the Braintree SDK integration option.
+
 PayPal iOS SDK
 ==============
 
-The PayPal iOS SDK makes it easy to add PayPal and credit card payments to mobile apps.
+The PayPal iOS SDK makes it easy to add PayPal payments to mobile apps.
 
 ![SDK screenshots](docs/sdk-screens.png)
 
@@ -10,11 +12,7 @@ The PayPal iOS SDK makes it easy to add PayPal and credit card payments to mobil
 >### Note
 > There are 4 static libraries that you should link when building your application. `libPayPalMobile.a`, `libCardIO.a`, `libopencv_core.a', and `libopencv_imgproc.a` are required for all of the SDK functionality.
 >
-> The current version of the PayPal iOS SDK was built using Xcode 7.0+.
->
-> If you are still using Xcode 6.4, you may experience link errors (duplicate symbols). If you can't upgrade from Xcode 6.4, please use version **2.11.x** of this SDK.
->
-> If you are still using Xcode 6.2, you may experience link errors (duplicate symbols). If you can't upgrade from Xcode 6.2, please use version **2.10.2** of this SDK.
+> The current version of the PayPal iOS SDK was built using Xcode 8.3.2.
 
 ## Contents
 
@@ -26,7 +24,6 @@ The PayPal iOS SDK makes it easy to add PayPal and credit card payments to mobil
 - [Testing](#testing)
 - [Documentation](#documentation)
 - [Usability](#usability)
-- [Moving to PayPal iOS SDK 2.0](#moving-to-paypal-ios-sdk-20)
 - [Next Steps](#next-steps)
 
 
@@ -37,12 +34,12 @@ The SDK supports two use cases for making payments - **Single Payment** and **Fu
 
 ### Single Payment
 
-Receive a one-time payment from a customer's PayPal account or payment card (scanned with [card.io](https://www.card.io/)). This can be either (1) an **immediate** payment which your servers should subsequently **verify**, or (2) an **authorization** for a payment which your servers must subsequently **capture**, or (3) a payment for an **order** which your servers must subsequently **authorize** and **capture**:
+Receive a one-time payment from a customer's PayPal account. This can be either (1) an **immediate** payment which your servers should subsequently **verify**, or (2) an **authorization** for a payment which your servers must subsequently **capture**, or (3) a payment for an **order** which your servers must subsequently **authorize** and **capture**:
 
 1. [Accept a Single Payment](docs/single_payment.md) and receive back a proof of payment.
 2. On your server, [Verify the Payment](https://developer.paypal.com/webapps/developer/docs/integration/mobile/verify-mobile-payment/), [Capture the Payment](https://developer.paypal.com/webapps/developer/docs/integration/direct/capture-payment/#capture-the-payment), or [Process the Order](https://developer.paypal.com/webapps/developer/docs/integration/direct/create-process-order/) (PayPal Developer site) using PayPal's API.
 
-*Note:* Direct Credit Card Payments is only available in a [select few countries](https://developer.paypal.com/webapps/developer/docs/integration/direct/rest_api_payment_country_currency_support/#direct-credit-card-payments).  Also, see the [International Support](#international-support) section for details on the specific currencies supported.
+*Note:* Direct Credit Card (DCC) payments are now deprecated in this SDK.  Please use [Braintree Payments](https://www.braintreepayments.com/), a PayPal Company, which is the easiest way to accept PayPal, credit cards, and many other payment methods.
 
 
 ### Future Payments
@@ -69,8 +66,8 @@ Your customer logs in to PayPal and consents to PayPal sharing information with 
 
 ## Requirements
 
-* Xcode 7 and iOS SDK 9
-* iOS 6.0+ target deployment
+* Xcode 8 and iOS SDK 10
+* iOS 7.0+ target deployment
 * armv7, armv7s, and arm64 devices, and the simulator (not armv6)
 * iPhone and iPad of all sizes and resolutions
 
@@ -80,21 +77,20 @@ Your customer logs in to PayPal and consents to PayPal sharing information with 
 ### If you use [CocoaPods](http://cocoapods.org), then add these lines to your podfile:
 
 ```ruby
-platform :ios, '6.0'
+platform :ios, '7.0'
 pod 'PayPal-iOS-SDK'
 ```
 
 ### If you don't use CocoaPods, then:
 
 1. Clone or download the SDK, which consists of header files, license acknowledgements, release notes, and a static library. It also includes a sample app.
-    * **As of version 2.12.0, the SDK requires Xcode 7 and iOS 8 SDK.**
+    * **As of version 2.17.0, the SDK requires Xcode 8 and iOS 10 SDK.**
 2. Add the `PayPalMobile` directory (containing several .h files and libPayPalMobile.a) to your Xcode project. We recommend checking "Copy items..." and selecting "Create groups...".
-3. (Optionally) Add the `CardIO` directory (containing several .h files, `libCardIO.a`, `libopencv_core.a`, and `libopencv_imgproc.a`) to your Xcode project. We recommend checking "Copy items..." and selecting "Create groups...". `libCardIO.a`, `libopencv_core.a`, and `libopencv_imgproc.a` adds the functionality to pay by scanning a card.
-4. In your project's **Build Settings** (in the `TARGETS` section, not the `PROJECTS` section):
+3. In your project's **Build Settings** (in the `TARGETS` section, not the `PROJECTS` section):
   * add `-lc++ -ObjC` to `Other Linker Flags`
   * enable `Enable Modules (C and Objective-C)`
   * enable `Link Frameworks Automatically`
-5. In your project's **Build Phases**, link your project with these libraries. Weak linking for iOS versions back to 6.0 is supported.
+4. In your project's **Build Phases**, link your project with these libraries. Weak linking for iOS versions back to 6.0 is supported.
   * `Accelerate.framework`
   * `AudioToolbox.framework`
   * `AVFoundation.framework`
@@ -119,7 +115,7 @@ Your mobile integration requires different `client_id` values for each environme
 
 Your server integrations for verifying or creating payments will also require the corresponding `client_secret` for each `client_id`.
 
-You can obtain these PayPal API credentials by visiting the [Applications page on the PayPal Developer site](https://developer.paypal.com/webapps/developer/applications) and logging in with your PayPal account.
+You can obtain these PayPal API credentials by visiting the [Applications page on the PayPal Developer site](https://developer.paypal.com/developer/applications/) and logging in with your PayPal account.
 
 ### Sandbox
 
@@ -144,8 +140,6 @@ The SDK has built-in translations for many languages and locales. See the header
 
 The SDK supports multiple currencies. See [the REST API country and currency documentation](https://developer.paypal.com/webapps/developer/docs/integration/direct/rest_api_payment_country_currency_support/) for a complete, up-to-date list.
 
-Note that currency support differs for payment card versus PayPal payments. Unless you disable payment card acceptance (via the `PayPalConfiguration.acceptCreditCards` property), **we recommend limiting transactions to currencies supported by both payment types.** Currently these are: USD, GBP, CAD, EUR, JPY.
-
 If your app initiates a transaction with a currency that turns out to be unsupported for the user's selected payment type, then the SDK will display an error to the user and write a message to the console log.
 
 
@@ -162,39 +156,26 @@ During development and testing, set the environment to Sandbox or NoNetwork/Mock
 * The [PayPal Developer Docs](https://developer.paypal.com/docs), which cover error codes and server-side integration instructions.
 
 
+## Support
+
+When opening an issue, please include the environment (live or sandbox), SDK version, and a `PayPal-Debug-ID`. The console log may have something like:
+
+```
+PayPal SDK: Request has failed with error: INTERNAL_SERVICE_ERROR - System error. Please try again later. (500) | PayPal Debug-ID: 463acd5lba23c [live, PayPal iOS SDK 2.14.1]
+```
+
+Additionally, information about the types of devices (iPhone 6s Plus, iPhone 5), iOS version, and any non-standard settings would be helpful to provide.
+
+For merchant-specific issues, you should use the [PayPal Merchant Technical Support site](https://www.paypal-techsupport.com) to open an issue.
+
+Please do **not** post your client ID or secret in an issue.
+
+
 ## Usability
 
 User interface appearance and behavior is set within the library itself. For the sake of usability and user experience consistency, apps should not adjust appearance properties or attempt to modify the SDK's behavior beyond the documented methods in the provided headers.
 
 Specifically, if you are using `UIAppearance` to modify the appearance of any UI elements in your app, you should reverse those changes prior to presenting our viewcontroller, and set them again after dismissing the viewcontroller.
-
-
-## Moving to PayPal iOS SDK 2.0
-
-
-### Upgrade from 1.x
-
-As a major version change, the API introduced in 2.0 is not backward compatible with 1.x integrations. However, the SDK still supports all previous single payment functionality. Upgrading is straightforward.
-
-* Initialization of the SDK is performed via methods of a new `PayPalMobile` class.
-* Most of the properties of `PayPalPaymentViewController` have been moved to `PayPalConfiguration`, and the `PayPalPaymentViewController` initializer has changed to take such a configuration object.
-* The `PayPalPaymentDelegate` protocol methods have also been altered to include a `PayPalPaymentViewController` as a parameter.
-
-
-### Older Libraries
-
-PayPal is in the process of replacing the older "Mobile Payments Libraries" (MPL) with the new PayPal Android and iOS SDKs.
-The new Mobile SDKs are based on the PayPal REST API, while the older MPL uses the Adaptive Payments API.
-
-Until features such as third-party, parallel, and chained payments are available, if needed, you can use MPL:
-
- - [MPL on GitHub](https://github.com/paypal/sdk-packages/tree/gh-pages/MPL)
- - [MPL Documentation](https://developer.paypal.com/webapps/developer/docs/classic/mobile/gs_MPL/)
-
-Issues related to MPL should be filed in the [sdk-packages repo](https://github.com/paypal/sdk-packages/).
-
-Developers with existing Express Checkout integrations or who want additional features may wish to use [Mobile Express Checkout](https://developer.paypal.com/webapps/developer/docs/classic/mobile/gs_MEC/)
-in a webview.
 
 
 ## Next Steps
@@ -205,3 +186,10 @@ Depending on your use case, you can now:
 * [Obtain user consent](docs/future_payments_mobile.md) to [create future payments](docs/future_payments_server.md).
 * [Obtain user consent](docs/profile_sharing_mobile.md) to [retrieve customer information](docs/profile_sharing_server.md).
 
+## Contributing
+
+Please read our [contributing guidelines](CONTRIBUTING.md) prior to submitting a Pull Request.
+
+## License
+
+Please refer to this repo's [license file](LICENSE).

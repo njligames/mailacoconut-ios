@@ -1,6 +1,0 @@
-framework module Pods_mailacoconut_ios {
-  umbrella header "Pods-mailacoconut-ios-umbrella.h"
-
-  export *
-  module * { export * }
-}

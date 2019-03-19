@@ -1,0 +1,6 @@
+framework module Pods_mailacoconut {
+  umbrella header "Pods-mailacoconut-umbrella.h"
+
+  export *
+  module * { export * }
+}

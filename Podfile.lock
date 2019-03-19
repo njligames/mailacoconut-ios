@@ -1,10 +1,28 @@
 PODS:
-  - PayPal-iOS-SDK (2.12.4)
+  - CardIO (5.4.1)
+  - PayPal-iOS-SDK (2.18.1):
+    - PayPal-iOS-SDK/CardIO (= 2.18.1)
+    - PayPal-iOS-SDK/Core (= 2.18.1)
+  - PayPal-iOS-SDK/CardIO (2.18.1):
+    - CardIO (~> 5.4.1)
+  - PayPal-iOS-SDK/Core (2.18.1)
+  - Stripe (14.0.0)
 
 DEPENDENCIES:
   - PayPal-iOS-SDK
+  - Stripe
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - CardIO
+    - PayPal-iOS-SDK
+    - Stripe
 
 SPEC CHECKSUMS:
-  PayPal-iOS-SDK: fdf3b2f900e0100b9e1df615663e7f6c41047789
+  CardIO: 56983b39b62f495fc6dae9ad7cf875143df06443
+  PayPal-iOS-SDK: 10654cd111e911a9807bddb96fae81aacb8e9915
+  Stripe: db29ad197c74aca6fb981e4e8355cf7ebd0fca5a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: db082e6df8c32022b31531fa2b6ee401c667c0ef
+
+COCOAPODS: 1.5.3

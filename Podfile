@@ -1,17 +1,18 @@
 # Uncomment this line to define a global platform for your project
-platform :ios, '6.0'
+platform :ios, '9.3'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'mailacoconut-ios' do
+target 'mailacoconut' do
 pod 'PayPal-iOS-SDK'
+pod 'Stripe'
 end
 
-target 'mailacoconut-iosTests' do
-
-end
-
-target 'mailacoconut-iosUITests' do
-
-end
-
+# target 'mailacoconut-iosTests' do
+# 
+# end
+# 
+# target 'mailacoconut-iosUITests' do
+# 
+# end
+# 

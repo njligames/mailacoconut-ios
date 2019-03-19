@@ -7,8 +7,8 @@
 //  Copyright (c) 2014 Razeware LLC. All rights reserved.
 //
 
-#import <Stripe/Stripe.h>
-#import <Stripe/Stripe+ApplePay.h>
+//#import <Stripe/Stripe.h>
+//#import <Stripe/Stripe+ApplePay.h>
 
 #import <UIKit/UIKit.h>
 #import <Chartboost/Chartboost.h>

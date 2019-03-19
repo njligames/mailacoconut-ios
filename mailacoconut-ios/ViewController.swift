@@ -55,7 +55,8 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
     
     
     // To set this up, see https://stripe.com/docs/mobile/apple-pay
-    let ApplePaySwagMerchantID = "merchant.com.mailacoconut.us.ios"
+//    let ApplePaySwagMerchantID = "merchant.com.mailacoconut.us.ios"
+    let ApplePaySwagMerchantID = "merchant.com.njligames.mailacoconut-ios"
     
     let coconutMessagePrice : NSDecimalNumber = 40.00 // this is in cents
     
@@ -138,7 +139,7 @@ class ViewController: UIViewController, PayPalPaymentDelegate, FlipsideViewContr
                                                          name: NSNotification.Name.UIKeyboardWillHide,
                                                          object: nil)
         
-        applePayButton.isEnabled = !PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks)
+        applePayButton.isEnabled = PKPaymentAuthorizationViewController.canMakePayments(usingNetworks: SupportedPaymentNetworks)
         
         self.configureView()
         self.messageField.delegate = self
@@ -416,6 +417,7 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
             
             if (error != nil) {
 //                NSLog("%@", error!)
+                print(error )
                 completion(PKPaymentAuthorizationStatus.failure)
                 return
             }
@@ -464,47 +466,47 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
                 case ConversionFailed = "ERROR: conversion from JSON failed"
             }
             
-//            let task = session.dataTask(with: request, completionHandler: {(data, response, error) in
-//                
-//                if(Chartboost.hasRewardedVideo(CBLocationMainMenu))
-//                {
-//                    Chartboost.showRewardedVideo(CBLocationMainMenu)
-//                }
-//                else
-//                {
-//                    Chartboost.cacheRewardedVideo(CBLocationMainMenu)
-//                }
-//                
-//                
-//                // notice that I can omit the types of data, response and error
-//                
-//                // your code
-//                if (error != nil) {
-//                    completion(PKPaymentAuthorizationStatus.failure)
-//                } else {
-//                    completion(PKPaymentAuthorizationStatus.success)
-//                }
-//                
-//                do {
-//                    guard let data = data else {
-//                        throw JSONError.NoData
-//                    }
-//                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
-//                        throw JSONError.ConversionFailed
-//                    }
-//                    print(json)
-//                    
-//                    
-//                    
-//                } catch let error as JSONError {
-//                    print(error.rawValue)
-//                } catch let error as NSError {
-//                    print(error.debugDescription)
-//                }
-//            });
-//            
-//            // do whatever you need with the task e.g. run
-//            task.resume()
+            let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
+                
+                if(Chartboost.hasRewardedVideo(CBLocationMainMenu))
+                {
+                    Chartboost.showRewardedVideo(CBLocationMainMenu)
+                }
+                else
+                {
+                    Chartboost.cacheRewardedVideo(CBLocationMainMenu)
+                }
+                
+                
+                // notice that I can omit the types of data, response and error
+                
+                // your code
+                if (error != nil) {
+                    completion(PKPaymentAuthorizationStatus.failure)
+                } else {
+                    completion(PKPaymentAuthorizationStatus.success)
+                }
+                
+                do {
+                    guard let data = data else {
+                        throw JSONError.NoData
+                    }
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary else {
+                        throw JSONError.ConversionFailed
+                    }
+                    print(json)
+                    
+                    
+                    
+                } catch let error as JSONError {
+                    print(error.rawValue)
+                } catch let error as NSError {
+                    print(error.debugDescription)
+                }
+            });
+            
+            // do whatever you need with the task e.g. run
+            task.resume()
         }
     }
     
@@ -590,7 +592,7 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
                 print(serializationError)
             }
             
-            let jsonString = "{\"data\": { \"object\": { \"metadata\": [ {\"name\":\"\(completedPayment.shippingAddress.recipientName)\"}, {\"firstName\":\"firstName\"}, {\"lastName\":\"lastName\"}, {\"street\":\"\(completedPayment.shippingAddress.line1)\"}, {\"city\":\"\(completedPayment.shippingAddress.city)\"}, {\"zip\":\"\(completedPayment.shippingAddress.postalCode)\"}, {\"message\":\"\(theMessage)\"} ] } } }"
+            let jsonString = "{\"data\": { \"object\": { \"metadata\": [ {\"name\":\"\(String(describing: completedPayment.shippingAddress?.recipientName))\"}, {\"firstName\":\"firstName\"}, {\"lastName\":\"lastName\"}, {\"street\":\"\(String(describing: completedPayment.shippingAddress?.line1))\"}, {\"city\":\"\(String(describing: completedPayment.shippingAddress?.city))\"}, {\"zip\":\"\(String(describing: completedPayment.shippingAddress?.postalCode))\"}, {\"message\":\"\(theMessage)\"} ] } } }"
             
             print(jsonString)
             
@@ -598,12 +600,12 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
                 "data": [
                     "object": [
                         "metadata": [
-                            "name":completedPayment.shippingAddress.recipientName,
+                            "name":completedPayment.shippingAddress?.recipientName,
                             "firstName":"",
                             "lastName":"",
-                            "street":completedPayment.shippingAddress.line1,
-                            "city":completedPayment.shippingAddress.city,
-                            "zip":completedPayment.shippingAddress.postalCode,
+                            "street":completedPayment.shippingAddress?.line1,
+                            "city":completedPayment.shippingAddress?.city,
+                            "zip":completedPayment.shippingAddress?.postalCode,
                             "message":theMessage
                         ]
                     ]
@@ -622,15 +624,15 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
                 fatalError()
             }
             let session = URLSession.shared
-//            let task = session.dataTask(with: request, completionHandler: {(data, response, error) in
-//                
-//                // notice that I can omit the types of data, response and error
-//                
-//                // your code
-//                
-//                
-//            })
-//            task.resume()
+            let task = session.dataTask(with: request as URLRequest, completionHandler: {(data, response, error) in
+                
+                // notice that I can omit the types of data, response and error
+                
+                // your code
+                
+                
+            })
+            task.resume()
             
             
             
@@ -691,7 +693,7 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
                                                         withCity: postalAddress.city,
                                                         withState: postalAddress.state,
                                                         withPostalCode: postalAddress.postalCode,
-                                                        withCountryCode: postalAddress.isoCountryCode.uppercased())
+                                                        withCountryCode: "US")
             
         
             
@@ -710,21 +712,21 @@ extension ViewController: PKPaymentAuthorizationViewControllerDelegate {
             let paymentDetails = PayPalPaymentDetails(subtotal: subtotal,
                                                       withShipping: shipping,
                                                       withTax: tax)
-            let total = subtotal?.adding(shipping).adding(tax)
+            let total = subtotal.adding(shipping).adding(tax)
             
             let payment = PayPalPayment(amount: total,
                                         currencyCode: "USD",
                                         shortDescription: coconutMessage.description,
                                         intent: .sale)
             
-            payment?.items = items
-            payment?.paymentDetails = paymentDetails
-            payment?.shippingAddress = shippingAddress;
-            payment?.custom = "{\"message\":\"\(coconutMessage.message)\"}"
-            payment?.softDescriptor = "Coconut Message"
+            payment.items = items
+            payment.paymentDetails = paymentDetails
+            payment.shippingAddress = shippingAddress;
+            payment.custom = "{\"message\":\"\(coconutMessage.message)\"}"
+            payment.softDescriptor = "Coconut Message"
             
             print(shippingAddress)
-            if (payment?.processable)! {
+            if (payment.processable) {
                 let paymentViewController = PayPalPaymentViewController(payment: payment, configuration: payPalConfig, delegate: self)
                 present(paymentViewController!, animated: true, completion: { () -> Void in
                     // send completed confirmaion to your server

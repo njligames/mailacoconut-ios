@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05A35EBCE1030F995FB53720 /* Pods_mailacoconut.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5FCC348562CBC7A85E93E89 /* Pods_mailacoconut.framework */; };
 		C1A821191CC5574D009E562B /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1A821181CC5574D009E562B /* TutorialViewController.swift */; };
 		C1A8211B1CC5AD44009E562B /* Defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = C1A8211A1CC5AD44009E562B /* Defaults.plist */; };
 		C1B3976F1CB5919F00F7272C /* PayPalInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = C1B3976E1CB5919F00F7272C /* PayPalInitializer.m */; };
@@ -33,7 +34,6 @@
 		C1C93F191CB4017B00E404E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F181CB4017B00E404E3 /* CoreGraphics.framework */; };
 		C1C93F1B1CB4018100E404E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F1A1CB4018100E404E3 /* Foundation.framework */; };
 		C1C93F1D1CB4018700E404E3 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C93F1C1CB4018700E404E3 /* StoreKit.framework */; };
-		C8D1196F961895EBEFD1CB54 /* Pods_mailacoconut_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA40D5E519A5B288A93D28BF /* Pods_mailacoconut_ios.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +54,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1F6C370FF4E473D26F1E38F9 /* Pods-mailacoconut-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mailacoconut-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mailacoconut-ios/Pods-mailacoconut-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		A9433AB4B1405803935B0B10 /* Pods-mailacoconut-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mailacoconut-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-mailacoconut-ios/Pods-mailacoconut-ios.release.xcconfig"; sourceTree = "<group>"; };
+		6B0FCF117892CE398F7E5173 /* Pods-mailacoconut.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mailacoconut.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mailacoconut/Pods-mailacoconut.debug.xcconfig"; sourceTree = "<group>"; };
+		9A6306B68EBE84EA908F7123 /* Pods-mailacoconut.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mailacoconut.release.xcconfig"; path = "Pods/Target Support Files/Pods-mailacoconut/Pods-mailacoconut.release.xcconfig"; sourceTree = "<group>"; };
+		C18767982241737100F2152B /* mailacoconut.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = mailacoconut.entitlements; sourceTree = "<group>"; };
 		C1A821181CC5574D009E562B /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
 		C1A8211A1CC5AD44009E562B /* Defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Defaults.plist; sourceTree = "<group>"; };
 		C1B3976D1CB5919F00F7272C /* PayPalInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalInitializer.h; sourceTree = "<group>"; };
@@ -88,7 +89,7 @@
 		C1C93F181CB4017B00E404E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C1C93F1A1CB4018100E404E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C1C93F1C1CB4018700E404E3 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		DA40D5E519A5B288A93D28BF /* Pods_mailacoconut_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mailacoconut_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5FCC348562CBC7A85E93E89 /* Pods_mailacoconut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mailacoconut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +103,7 @@
 				C1C93F171CB4017100E404E3 /* UIKit.framework in Frameworks */,
 				C1C93F0F1CB4012700E404E3 /* Stripe.framework in Frameworks */,
 				C1C93F131CB4014400E404E3 /* Chartboost.framework in Frameworks */,
-				C8D1196F961895EBEFD1CB54 /* Pods_mailacoconut_ios.framework in Frameworks */,
+				05A35EBCE1030F995FB53720 /* Pods_mailacoconut.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,11 +128,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		61B0F73E36E555F18DFC7CD4 /* Pods */ = {
+		AFA211620C85C421FC1DD30C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1F6C370FF4E473D26F1E38F9 /* Pods-mailacoconut-ios.debug.xcconfig */,
-				A9433AB4B1405803935B0B10 /* Pods-mailacoconut-ios.release.xcconfig */,
+				6B0FCF117892CE398F7E5173 /* Pods-mailacoconut.debug.xcconfig */,
+				9A6306B68EBE84EA908F7123 /* Pods-mailacoconut.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -139,12 +140,13 @@
 		C1C93EC91CB3FF0200E404E3 = {
 			isa = PBXGroup;
 			children = (
+				C18767982241737100F2152B /* mailacoconut.entitlements */,
 				C1C93F1E1CB4018E00E404E3 /* Frameworks */,
 				C1C93ED41CB3FF0200E404E3 /* mailacoconut-ios */,
 				C1C93EEC1CB3FF0200E404E3 /* mailacoconut-iosTests */,
 				C1C93EF71CB3FF0200E404E3 /* mailacoconut-iosUITests */,
 				C1C93ED31CB3FF0200E404E3 /* Products */,
-				61B0F73E36E555F18DFC7CD4 /* Pods */,
+				AFA211620C85C421FC1DD30C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -211,7 +213,7 @@
 				C1C93F161CB4017100E404E3 /* UIKit.framework */,
 				C1C93F121CB4014400E404E3 /* Chartboost.framework */,
 				C1C93F0E1CB4012700E404E3 /* Stripe.framework */,
-				DA40D5E519A5B288A93D28BF /* Pods_mailacoconut_ios.framework */,
+				F5FCC348562CBC7A85E93E89 /* Pods_mailacoconut.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -223,12 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1C93EFD1CB3FF0200E404E3 /* Build configuration list for PBXNativeTarget "mailacoconut" */;
 			buildPhases = (
-				8CFAB4FA11B304D31331E965 /* Check Pods Manifest.lock */,
+				4A0844206FF376F670BA0D8F /* [CP] Check Pods Manifest.lock */,
 				C1C93ECE1CB3FF0200E404E3 /* Sources */,
 				C1C93ECF1CB3FF0200E404E3 /* Frameworks */,
 				C1C93ED01CB3FF0200E404E3 /* Resources */,
-				BB566082BA6DDA6573140198 /* Embed Pods Frameworks */,
-				773095CA296FA1B232012F25 /* Copy Pods Resources */,
+				7191FA478380F48472F088D5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -290,6 +291,9 @@
 						DevelopmentTeam = SRBQ5SCF5X;
 						LastSwiftMigration = 0830;
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 1;
+							};
 							com.apple.OMC = {
 								enabled = 1;
 							};
@@ -356,49 +360,40 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		773095CA296FA1B232012F25 /* Copy Pods Resources */ = {
+		4A0844206FF376F670BA0D8F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mailacoconut-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mailacoconut-ios/Pods-mailacoconut-ios-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		8CFAB4FA11B304D31331E965 /* Check Pods Manifest.lock */ = {
+		7191FA478380F48472F088D5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-mailacoconut/Pods-mailacoconut-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Stripe/Stripe.framework",
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Stripe.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		BB566082BA6DDA6573140198 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mailacoconut-ios/Pods-mailacoconut-ios-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mailacoconut/Pods-mailacoconut-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -559,11 +554,12 @@
 		};
 		C1C93EFE1CB3FF0200E404E3 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1F6C370FF4E473D26F1E38F9 /* Pods-mailacoconut-ios.debug.xcconfig */;
+			baseConfigurationReference = 6B0FCF117892CE398F7E5173 /* Pods-mailacoconut.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "mailacoconut-ios/mailacoconut-ios.entitlements";
+				CODE_SIGN_ENTITLEMENTS = mailacoconut.entitlements;
+				DEVELOPMENT_TEAM = SRBQ5SCF5X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -581,11 +577,12 @@
 		};
 		C1C93EFF1CB3FF0200E404E3 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A9433AB4B1405803935B0B10 /* Pods-mailacoconut-ios.release.xcconfig */;
+			baseConfigurationReference = 9A6306B68EBE84EA908F7123 /* Pods-mailacoconut.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = "mailacoconut-ios/mailacoconut-ios.entitlements";
+				CODE_SIGN_ENTITLEMENTS = mailacoconut.entitlements;
+				DEVELOPMENT_TEAM = SRBQ5SCF5X;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
